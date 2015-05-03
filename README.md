@@ -1,9 +1,9 @@
-# Polyphonic
+# Polyphonic Symfony
 
 [![Build Status](https://img.shields.io/travis/headzoo/polyphonic/master.svg?style=flat-square)](https://travis-ci.org/headzoo/polyphonic)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/polyphonic/master/LICENSE.md)
 
-Polymer Project bundle for the Symfony2 framework.
+Polymer Project bundle for Twig and the Symfony2 framework.
 
 **This bundle is no where near production ready. Use at your own risk.**
 
@@ -36,11 +36,11 @@ Using the element in your views:
 ```
 
 ### Installing
-Add `headzoo/polyphonic` to your composer.json requirements.
+Add `headzoo/polyphonic-symfony` to your composer.json requirements.
 
 ```javascript
 "require": {
-    "headzoo/polyphonic": "dev-master"
+    "headzoo/polyphonic-symfony": "dev-master"
 }
 ```
 
