@@ -5,6 +5,8 @@
 
 Polymer Project bundle for the Symfony2 framework.
 
+**This bundle is no where near production ready. Use at your own risk.**
+
 ### Example Element
 A simple example of using the `{% polymer element %}` Twig tag to create a custom `<hello-world><hello-world>` element. This element displays "Hello, World!" by default, but the message can be changed by setting the `name` attribute.
 
