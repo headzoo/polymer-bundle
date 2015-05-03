@@ -1,7 +1,3 @@
-nudeflix:
-    resource: "@NudeflixBundle/Resources/config/routing.yml"
-    prefix:   /
-    
 polymer:
     resource: "@PolymerBundle/Resources/config/routing.yml"
     prefix:   /_polymer
