@@ -18,7 +18,7 @@ A simple example of using the `{% polymer element %}` Twig tag to create a custo
 This element displays "Hello, World!" by default, but the message can be changed by setting the `name` attribute.
 
 Note that there's no need to add `<link rel="import" href="polymer/polymer.html">` as the import statement is added
-automatically. The template is saved in the bundle Resources directory at
+automatically. The template is saved in the bundle directory at
 `Resources/public/elements/hello-world/hello-world.html.twig`.
 
 ```html
