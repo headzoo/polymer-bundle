@@ -1,7 +1,16 @@
 parameters:
     polymer.configuration.class: Headzoo\Bundle\PolymerBundle\Config\PolymerConfiguration
+    polymer.util.web_path_resolver.class: Headzoo\Bundle\PolymerBundle\Util\WebPathResolver
     
 services:
     polymer.configuration:
         class: %polymer.configuration.class%
         # Arguments are added in PolymerExtension
+        
+        
+    polymer.util.web_path_resolver:
+        class: %polymer.util.web_path_resolver.class%
+        arguments:
+            - @kernel
+        calls:
+            - [setConfiguration, [@polymer.configuration]]

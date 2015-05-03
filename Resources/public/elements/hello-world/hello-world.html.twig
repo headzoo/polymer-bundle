@@ -1,10 +1,19 @@
-{% polymer element "hello-world" attributes="name" %}
+{% polymer element "hello-world" attributes="names" %}
     <template>
-        <p>Hello, {{name}}!</p>
+        <ul>
+            <template repeat="{{name in names}}">
+                <li>{{ name }}</li>
+            </template>
+            <twig>
+                {% for name in ["foo", "bar"] %}
+                    {{ name }}
+                {% endfor %}
+            </twig>
+        </ul>
     </template>
     <script>
-        Polymer({
-            name: "World"
+        Polymer('hello-world', {
+            names: ["Sean", "Josh", "Rob"]
         });
     </script>
 {% endpolymer %}

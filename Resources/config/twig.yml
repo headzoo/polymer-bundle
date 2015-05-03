@@ -15,7 +15,7 @@ services:
 
     polymer.twig.extension:
         class: %polymer.twig.extension.class%
-        parent: polymer.twig.parent.config_aware
+        parent: polymer.twig.parent.config_aware 
         tags:
             - { name: twig.extension }
              
@@ -23,6 +23,8 @@ services:
     polymer.twig.functions.paths:
         class: %polymer.twig.functions.paths.class%
         parent: polymer.twig.parent.config_aware
+        arguments:
+            - @polymer.util.web_path_resolver
         tags:
             - { name: polymer.twig.function }
 

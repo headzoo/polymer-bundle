@@ -1,0 +1,4 @@
+polymer_import_element:
+    path: /import
+    defaults: { _controller: PolymerBundle:Import:element }
+    methods: ["GET"]
