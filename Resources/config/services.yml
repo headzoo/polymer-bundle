@@ -1,0 +1,7 @@
+parameters:
+    polymer.configuration.class: Headzoo\Bundle\PolymerBundle\Config\PolymerConfiguration
+    
+services:
+    polymer.configuration:
+        class: %polymer.configuration.class%
+        # Arguments are added in PolymerExtension

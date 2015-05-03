@@ -1,0 +1,40 @@
+parameters:
+    polymer.twig.extension.class: Headzoo\Bundle\PolymerBundle\Twig\PolymerExtension
+    polymer.twig.functions.paths.class: Headzoo\Bundle\PolymerBundle\Twig\Functions\PathsProvider
+    polymer.twig.filters.standard.class: Headzoo\Bundle\PolymerBundle\Twig\Filters\StandardProvider
+    polymer.twig.parser.class: Headzoo\Bundle\PolymerBundle\Twig\Tags\PolymerTokenParser
+    
+   
+services:     
+    polymer.twig.parent.config_aware:
+        abstract: true
+        private: true
+        calls:
+            - [setConfiguration, [@polymer.configuration]] 
+            
+
+    polymer.twig.extension:
+        class: %polymer.twig.extension.class%
+        parent: polymer.twig.parent.config_aware
+        tags:
+            - { name: twig.extension }
+             
+    
+    polymer.twig.functions.paths:
+        class: %polymer.twig.functions.paths.class%
+        parent: polymer.twig.parent.config_aware
+        tags:
+            - { name: polymer.twig.function }
+
+    
+    polymer.twig.filters.standard:
+        class: %polymer.twig.filters.standard.class%
+        parent: polymer.twig.parent.config_aware
+        tags:
+            - { name: polymer.twig.filter }
+            
+    polymer.twig.parser:
+        class: %polymer.twig.parser.class%
+        parent: polymer.twig.parent.config_aware
+        tags:
+            - { name: polymer.twig.token_parser }
