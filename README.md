@@ -3,6 +3,8 @@
 [![Build Status](https://img.shields.io/travis/headzoo/polyphonic-symfony/master.svg?style=flat-square)](https://travis-ci.org/headzoo/polyphonic-symfony)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/polyphonic-symfony/master/LICENSE.md)
 
+![Polyphonic Symfony](http://i.imgur.com/DukYX3u.png)
+
 Polymer bundle for the Twig template engine and the Symfony framework.
 
 **This bundle is no where near production ready. It's not even dev ready. Use at your own risk.**
