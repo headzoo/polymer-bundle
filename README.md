@@ -42,7 +42,7 @@ Add `headzoo/polyphonic` to your composer.json requirements.
 }
 ```
 
-Add the bundle your AppKernel.php.
+Run `composer update` and then add the bundle your AppKernel.php.
 
 ```php
 class AppKernel extends Kernel
