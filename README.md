@@ -5,7 +5,7 @@
 
 Polymer Project bundle for the Symfony2 framework.
 
-
+**This bundle is no where near production ready. Use at your own risk.**
 
 ### Example Element
 A simple example of using the `{% polymer element %}` Twig tag to create a custom `<hello-world><hello-world>` element. This element displays "Hello, World!" by default, but the message can be changed by setting the `name` attribute.
@@ -33,4 +33,32 @@ Using the element in your views:
 
 <!-- Displays "Hello, Pascal!" -->
 <hello-world name="Pascal"></hello-world>
+```
+
+### Installing
+Add `headzoo/polyphonic` to your composer.json requirements.
+
+```javascript
+"require": {
+    "headzoo/polyphonic": "dev-master"
+}
+```
+
+Run `composer update` and then add the bundle your AppKernel.php.
+
+```php
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
+            ...
+            new Headzoo\Bundle\PolymerBundle\PolymerBundle(),
+        )
+        
+        return $bundles;
+    }
+}
 ```
