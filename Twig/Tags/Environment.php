@@ -19,6 +19,11 @@ class Environment
     use PolymerConfigurationAwareTrait;
 
     /**
+     * @var array
+     */
+    private $_options = [];
+    
+    /**
      * Constructor
      * 
      * @param Twig_LoaderInterface          $loader  A Twig_LoaderInterface instance
@@ -28,6 +33,8 @@ class Environment
     public function __construct(Twig_LoaderInterface $loader = null, $options = array(), PolymerConfigurationInterface $configuration)
     {
         parent::__construct($loader, $options);
+        
+        $this->_options = $options;
         $this->setConfiguration($configuration);
     }
     
@@ -39,7 +46,7 @@ class Environment
     public function getLexer()
     {
         if (null === $this->lexer) {
-            $this->lexer = new Lexer($this, [], $this->configuration);
+            $this->lexer = new Lexer($this, $this->_options, $this->configuration);
         }
 
         return $this->lexer;
