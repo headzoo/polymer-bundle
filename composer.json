@@ -1,6 +1,6 @@
 {
   "name": "headzoo/polyphonic-symfony",
-  "description": "Polymer bundle for Twig templating engine and the Symfony framework.",
+  "description": "Symfony framework bundle and Twig extension for using and developing Polymer web components.",
   "keywords": [
     "symfony",
     "twig",
