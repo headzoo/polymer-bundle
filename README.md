@@ -16,6 +16,7 @@ Polyphonic handles the problems that come up when trying to build and use web co
 ### Example Element
 A simple example of using the `{% polymer element %}` Twig tag to create a custom `<hello-world><hello-world>` element.
 This element displays "Hello, World!" by default, but the message can be changed by setting the `name` attribute.
+
 Note that there's no need to add `<link rel="import" href="polymer/polymer.html">` as the import statement is added
 automatically. The template is saved in the bundle Resources directory at
 `Resources/public/elements/hello-world/hello-world.html.twig`.
@@ -44,6 +45,14 @@ Using the element in your views:
 <!-- Displays "Hello, Pascal!" -->
 <hello-world name="Pascal"></hello-world>
 ```
+
+Note, the import statement can also be written like this:
+
+```html
+{% polymer import "@AcmeBundle:hello-world.html.twig" %}
+```
+
+Polyphonic assumes a file named `hello-world.html.twig` can be found in a directory of the same name, e.g. `hello-world`.
 
 ### Installing
 Add `headzoo/polyphonic-symfony` to your composer.json requirements.
