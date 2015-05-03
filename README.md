@@ -54,6 +54,12 @@ Note, the import statement can also be written like this:
 
 Polyphonic assumes a file named `hello-world.html.twig` can be found in a directory of the same name, e.g. `hello-world`.
 
+
+### Requirements
+PHP 5.5.*  
+Symfony 2.6.*
+
+
 ### Installing
 Add `headzoo/polyphonic-symfony` to your composer.json requirements.
 
