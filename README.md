@@ -41,7 +41,7 @@ Add `headzoo/polyphonic-symfony` to your composer.json requirements.
 
 ```javascript
 "require": {
-    "headzoo/polyphonic-symfony": "dev-master"
+    "headzoo/polyphonic-symfony": "0.0.2"
 }
 ```
 
