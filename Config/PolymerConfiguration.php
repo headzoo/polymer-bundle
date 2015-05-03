@@ -39,6 +39,38 @@ class PolymerConfiguration
     {
         return $this->set(self::KEY_IMPORTS, $imports);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDebug()
+    {
+        return $this->get(self::KEY_DEBUG);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDebug($debug)
+    {
+        return $this->set(self::KEY_DEBUG, $debug);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUseController()
+    {
+        return $this->get(self::KEY_USE_CONTROLLER);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setUseController($use_controller)
+    {
+        return $this->set(self::KEY_USE_CONTROLLER, $use_controller);
+    }
     
     /**
      * {@inheritdoc}
@@ -78,10 +110,12 @@ class PolymerConfiguration
     public static function getDefaults()
     {
         return [
-            self::KEY_AUTO_VERBATIM => self::DEFAULT_AUTO_VERBATIM,
-            self::KEY_IMPORTS       => [],
-            self::KEY_PATHS         => new PathsConfiguration(),
-            self::KEY_TWIG          => new TwigConfiguration()
+            self::KEY_AUTO_VERBATIM  => self::DEFAULT_AUTO_VERBATIM,
+            self::KEY_DEBUG          => self::DEFAULT_DEBUG,
+            self::KEY_USE_CONTROLLER => self::DEFAULT_USE_CONTROLLER,
+            self::KEY_IMPORTS        => [],
+            self::KEY_PATHS          => new PathsConfiguration(),
+            self::KEY_TWIG           => new TwigConfiguration()
         ];
     }
 
@@ -94,9 +128,11 @@ class PolymerConfiguration
         
         switch($key) {
             case self::KEY_AUTO_VERBATIM:
+            case self::KEY_DEBUG:
+            case self::KEY_USE_CONTROLLER:
                 if (!is_bool($value)) {
                     throw new Exception\InvalidValueException(sprintf(
-                        $msg, self::KEY_AUTO_VERBATIM, "boolean"
+                        $msg, $key, "boolean"
                     ));
                 }
                 break;
@@ -133,6 +169,8 @@ class PolymerConfiguration
     {
         switch($key) {
             case self::KEY_AUTO_VERBATIM:
+            case self::KEY_DEBUG:
+            case self::KEY_USE_CONTROLLER:
                 if (is_int($value)) {
                     $value = (bool)$value;
                 }

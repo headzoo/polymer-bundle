@@ -11,8 +11,14 @@ interface PolymerConfigurationInterface
     const KEY_PATHS = "paths";
     const KEY_IMPORTS = "imports";
     const KEY_AUTO_VERBATIM = "auto_verbatim";
+    const KEY_DEBUG = "debug";
+    const KEY_USE_CONTROLLER = "use_controller";
     
     const DEFAULT_AUTO_VERBATIM = true;
+    const DEFAULT_DEBUG = false;
+    const DEFAULT_USE_CONTROLLER = true;
+    
+    const ROUTE_IMPORT = "/_polymer/import";
 
     /**
      * Gets an array of elements to import automatically
@@ -45,6 +51,38 @@ interface PolymerConfigurationInterface
      * @return $this
      */
     public function setAutoVerbatim($auto_verbatim);
+
+    /**
+     * Returns whether debugging is enabled
+     * 
+     * @return bool
+     */
+    public function getDebug();
+
+    /**
+     * Sets whether debugging is enabled
+     * 
+     * @param bool $debug
+     *
+     * @return $this
+     */
+    public function setDebug($debug);
+
+    /**
+     * Gets whether the controller is used to resolve element urls
+     * 
+     * @return bool
+     */
+    public function getUseController();
+
+    /**
+     * Sets whether the controller is used to resolve element urls
+     * 
+     * @param bool $use_controller
+     *
+     * @return $this
+     */
+    public function setUseController($use_controller);
     
     /**
      * Gets the Twig configuration

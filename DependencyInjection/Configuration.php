@@ -39,6 +39,12 @@ class Configuration
     private function parseImports($rootNode)
     {
         $rootNode->children()
+            ->booleanNode(PolymerConfiguration::KEY_DEBUG)
+                ->defaultValue(PolymerConfiguration::getDefault(PolymerConfiguration::KEY_DEBUG))
+            ->end()
+            ->booleanNode(PolymerConfiguration::KEY_USE_CONTROLLER)
+                ->defaultValue(PolymerConfiguration::getDefault(PolymerConfiguration::KEY_USE_CONTROLLER))
+            ->end()
             ->booleanNode(PolymerConfiguration::KEY_AUTO_VERBATIM)
                 ->defaultValue(PolymerConfiguration::getDefault(PolymerConfiguration::KEY_AUTO_VERBATIM))
             ->end()
