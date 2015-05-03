@@ -1,4 +1,8 @@
 # Polyphonic
+
+[![Build Status](https://img.shields.io/travis/headzoo/polyphonic/master.svg?style=flat-square)](https://travis-ci.org/headzoo/polyphonic)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/polyphonic/master/LICENSE.md)
+
 Polymer Project bundle for the Symfony2 framework.
 
 
