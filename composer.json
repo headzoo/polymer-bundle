@@ -1,0 +1,26 @@
+{
+  "name": "headzoo/polyphonic",
+  "description": "Polymer Project bundle for the Symfony2 framework.",
+  "keywords": [
+    "symfony",
+    "polymer",
+    "web components"
+  ],
+  "homepage": "https://github.com/headzoo/polyphonic",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sean Hickey",
+      "email": "sean@headzoo.io",
+      "homepage": "http://headzoo.io/"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "autoload": {
+    "psr-4": { "Headzoo\\": "" }
+  },
+  "minimum-stability": "dev"
+}
