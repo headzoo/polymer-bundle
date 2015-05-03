@@ -138,8 +138,10 @@ class PolymerConfigurationTest
     protected function getTestArray()
     {
         return [
+            PolymerConfiguration::KEY_AUTO_VERBATIM => PolymerConfiguration::DEFAULT_AUTO_VERBATIM,
+            PolymerConfiguration::KEY_IMPORTS => [],
             PolymerConfiguration::KEY_TWIG => [
-                TwigConfiguration::KEY_PREFIX => TwigConfiguration::DEFAULT_PREFIX,
+                TwigConfiguration::KEY_TAG => TwigConfiguration::DEFAULT_TAG,
                 TwigConfiguration::KEY_TEMPLATES => [
                     TwigConfiguration::TEMPLATE_IMPORT => TwigConfiguration::DEFAULT_TEMPLATE_IMPORT
                 ]

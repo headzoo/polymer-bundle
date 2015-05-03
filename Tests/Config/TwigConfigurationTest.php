@@ -24,18 +24,6 @@ class TwigConfigurationTest
     }
 
     /**
-     * @covers ::prefix
-     */
-    public function testPrefix()
-    {
-        $expected = TwigConfiguration::DEFAULT_PREFIX . "func";
-        $this->assertEquals(
-            $expected,
-            $this->fixture->prefix("func")
-        );
-    }
-
-    /**
      * @covers ::getTemplate
      */
     public function testGetTemplate()
@@ -61,7 +49,7 @@ class TwigConfigurationTest
     public function testTestValue()
     {
         $this->assertTrue(
-            $this->fixture->testValue(TwigConfiguration::KEY_PREFIX, "polymer")
+            $this->fixture->testValue(TwigConfiguration::KEY_TAG, "polymer")
         );
     }
 }
