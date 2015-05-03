@@ -1,10 +1,12 @@
 {
   "name": "headzoo/polyphonic-symfony",
-  "description": "Polymer Project bundle for Twig and the Symfony2 framework.",
+  "description": "Polymer Project bundle for Twig templating engine and the Symfony framework.",
   "keywords": [
     "symfony",
+    "twig",
     "polymer",
-    "web components"
+    "web components",
+    "javascript"
   ],
   "homepage": "https://github.com/headzoo/polyphonic-symfony",
   "type": "symfony-bundle",
