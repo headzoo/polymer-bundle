@@ -78,7 +78,7 @@ class PolymerConfiguration
     public static function getDefaults()
     {
         return [
-            self::KEY_AUTO_VERBATIM => true,
+            self::KEY_AUTO_VERBATIM => self::DEFAULT_AUTO_VERBATIM,
             self::KEY_IMPORTS       => [],
             self::KEY_PATHS         => new PathsConfiguration(),
             self::KEY_TWIG          => new TwigConfiguration()

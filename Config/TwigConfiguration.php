@@ -23,30 +23,6 @@ class TwigConfiguration
     {
         return $this->set(self::KEY_TAG, $tag);
     }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function getPrefix()
-    {
-        return $this->get(self::KEY_PREFIX);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setPrefix($prefix)
-    {
-        return $this->setPrefix(self::KEY_PREFIX, $prefix);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function prefix($str)
-    {
-        return $this->getPrefix() . $str;
-    }
 
     /**
      * {@inheritdoc}
@@ -85,7 +61,6 @@ class TwigConfiguration
     public static function getDefaults()
     {
         return [
-            self::KEY_PREFIX    => self::DEFAULT_PREFIX,
             self::KEY_TAG       => self::DEFAULT_TAG,
             self::KEY_TEMPLATES => [
                 self::TEMPLATE_ELEMENT => self::DEFAULT_TEMPLATE_ELEMENT,
@@ -102,7 +77,6 @@ class TwigConfiguration
         $msg = 'Configuration value "%s" is expected to be a %s.';
         
         switch($key) {
-            case self::KEY_PREFIX:
             case self::KEY_TAG:
                 if (!is_string($value)) {
                     throw new Exception\InvalidValueException(sprintf(

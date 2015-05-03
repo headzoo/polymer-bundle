@@ -11,6 +11,8 @@ interface PolymerConfigurationInterface
     const KEY_PATHS = "paths";
     const KEY_IMPORTS = "imports";
     const KEY_AUTO_VERBATIM = "auto_verbatim";
+    
+    const DEFAULT_AUTO_VERBATIM = true;
 
     /**
      * Gets an array of elements to import automatically
