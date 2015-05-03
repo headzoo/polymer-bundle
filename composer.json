@@ -20,7 +20,7 @@
     "php": ">=5.5.0"
   },
   "autoload": {
-    "psr-4": { "Headzoo\\": "" }
+    "psr-4": { "Headzoo\\Bundle\\PolymerBundle\\": "" }
   },
   "minimum-stability": "dev"
 }
