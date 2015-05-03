@@ -41,7 +41,7 @@ class PolymerExtension
     {
         foreach($functions->getFunctions() as $name => $callable) {
             $this->functions[] = new Twig_SimpleFunction(
-                $this->configuration->getTwig()->prefix($name),
+                $this->configuration->getTwig()->getTag() . "_{$name}",
                 $callable
             );
         }
@@ -56,7 +56,7 @@ class PolymerExtension
     {
         foreach($filters->getFilters() as $name => $callable) {
             $this->filters[] = new Twig_SimpleFilter(
-                $this->configuration->getTwig()->prefix($name),
+                $this->configuration->getTwig()->getTag() . "_{$name}",
                 $callable
             );
         }
