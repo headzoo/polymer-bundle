@@ -1,9 +1,9 @@
 # Polyphonic Symfony
 
-[![Build Status](https://img.shields.io/travis/headzoo/polyphonic/master.svg?style=flat-square)](https://travis-ci.org/headzoo/polyphonic)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/polyphonic/master/LICENSE.md)
+[![Build Status](https://img.shields.io/travis/headzoo/polyphonic-symfony/master.svg?style=flat-square)](https://travis-ci.org/headzoo/polyphonic-symfony)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/polyphonic-symfony/master/LICENSE.md)
 
-Polymer Project bundle for Twig and the Symfony2 framework.
+Polymer bundle for Twig template engine and the Symfony framework.
 
 **This bundle is no where near production ready. Use at your own risk.**
 
