@@ -3,9 +3,10 @@
 [![Build Status](https://img.shields.io/travis/headzoo/polyphonic-symfony/master.svg?style=flat-square)](https://travis-ci.org/headzoo/polyphonic-symfony)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/polyphonic-symfony/master/LICENSE.md)
 
-Polymer bundle for Twig template engine and the Symfony framework.
+Polymer bundle for the Twig template engine and the Symfony framework.
 
-**This bundle is no where near production ready. Use at your own risk.**
+**This bundle is no where near production ready. It's not even dev ready. Use at your own risk.**
+
 
 ### Example Element
 A simple example of using the `{% polymer element %}` Twig tag to create a custom `<hello-world><hello-world>` element. This element displays "Hello, World!" by default, but the message can be changed by setting the `name` attribute.
