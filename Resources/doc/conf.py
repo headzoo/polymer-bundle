@@ -5,7 +5,6 @@ import shlex
 from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 from pygments.lexers.data import YamlLexer
-from pygments.lexers.data import JsonLexer
 from pygments.lexers.templates import TwigHtmlLexer
 from pygments.lexers.templates import CheetahHtmlLexer
 
@@ -14,7 +13,6 @@ lexers['php-annotations'] = PhpLexer(startinline=True, linenos=1)
 lexers['yaml'] = YamlLexer()
 lexers['twig'] = TwigHtmlLexer()
 lexers['html'] = CheetahHtmlLexer()
-lexers['json'] = JsonLexer()
 
 extensions = [
     'sphinx.ext.autodoc',

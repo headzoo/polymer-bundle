@@ -10,16 +10,16 @@ be added to your ``/app/config/config.yml`` file.
         debug:         true
         auto_verbatim: true
         auto_imports:
-            - core-animation.html
-            - paper-elements.html
+            - "core-animation.html"
+            - "paper-elements.html"
         twig:
-            tag: polymer
+            tag: "polymer"
             templates:
-                element: PolymerBundle:polymer:element.html.twig
-                import:  PolymerBundle:polymer:import.html.twig
+                element: "PolymerBundle:polymer:element.html.twig"
+                import:  "PolymerBundle:polymer:import.html.twig"
         paths:
-            elements:   elements
-            components: bower_components
+            elements:   "elements"
+            components: "bower_components"
 
 debug
 -----
