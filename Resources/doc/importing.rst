@@ -50,6 +50,22 @@ tag.
         "core-toolbar.html"
     %}
 
+Example 3:
+^^^^^^^^^^
+
+You can pass variables and arrays to the ``{% polymer import %}`` tag.
+
+.. sourcecode:: twig
+
+	{% polymer import ["core-ajax.html", "core-menu.html"] %}
+	
+	{% set asset1 = "core-ajax.html" %}
+	{% set asset2 = "core-menu.html" %}
+	
+	{% polymer import asset1 asset2 %}
+	{% polymer import [asset1, asset2] %}
+
+
 Core Components
 ---------------
 
