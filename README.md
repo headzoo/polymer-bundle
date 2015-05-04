@@ -6,7 +6,7 @@ Symfony bundle and Twig extension for developing and deploying Polymer web compo
 [![Documentation](https://img.shields.io/badge/documentation-readthedocs-blue.svg?style=flat-square)](http://www.polyphonic-symfony.org)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/polymer-bundle/master/LICENSE.md)
 
-![Polyphonic Symfony](http://i.imgur.com/DukYX3u.png)
+![Polyphonic Symfony](http://www.polyphonic-symfony.org/en/latest/_images/logos-wide.png)
 
 **This bundle is no where near production ready. Use at your own risk.**
 
