@@ -12,7 +12,7 @@ This document assumes you have used [Bower](http://bower.io/) to install Polymer
 `web/bower_components` directory. By default Polyphonic is configured to look for
 components in that directory.
 
-## Hello World
+#### Hello World
 To get started lets look at how we would create a simple `<hello-world>` element
 outside of a Symfony project using plain HTML5 and JavaScript. 
 
