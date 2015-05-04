@@ -20,16 +20,6 @@ web components within a Symfony project. Polyphonic handles the problems
 that come up when trying to build and use web components within Twig
 templates.
 
-.. toctree::
-	installing.rst
-	configuration.rst
-	custom.rst
-	importing.rst
-	deploy.rst
-	
-	about/credits.rst
-	about/license.rst
-
 Quick Start
 -----------
 
@@ -77,3 +67,15 @@ Note, the import statement can also be written like this:
 
 Polyphonic assumes a file named ``hello-world.html.twig`` can be found
 in a directory of the same name, e.g. ``hello-world``.
+
+.. toctree::
+	:maxdepth: 2
+	
+	installing.rst
+	configuration.rst
+	custom.rst
+	importing.rst
+	deploy.rst
+	
+	about/credits.rst
+	about/license.rst
