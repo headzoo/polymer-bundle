@@ -2,7 +2,7 @@
 
 <phpunit colors="true" bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite name="Polymer Project bundle for the Symfony2 framework.">
+        <testsuite name="Polyphonic Polymer Bundle.">
             <directory>./Tests</directory>
         </testsuite>
     </testsuites>
