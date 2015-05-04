@@ -11,6 +11,22 @@ class PathsConfiguration
     /**
      * {@inheritdoc}
      */
+    public function isRelativeOnDebug()
+    {
+        return $this->get(self::KEY_RELATIVE_ON_DEBUG);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setRelativeOnDebug($relative_on_debug)
+    {
+        return $this->set(self::KEY_RELATIVE_ON_DEBUG, $relative_on_debug);
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
     public function getElements()
     {
         return $this->get(self::KEY_ELEMENTS);
@@ -46,8 +62,9 @@ class PathsConfiguration
     public static function getDefaults()
     {
         return [
-            self::KEY_ELEMENTS   => self::DEFAULT_ELEMENTS,
-            self::KEY_COMPONENTS => self::DEFAULT_COMPONENTS
+            self::KEY_RELATIVE_ON_DEBUG => self::DEFAULT_RELATIVE_ON_DEBUG,
+            self::KEY_ELEMENTS          => self::DEFAULT_ELEMENTS,
+            self::KEY_COMPONENTS        => self::DEFAULT_COMPONENTS
         ];
     }
 
@@ -56,13 +73,44 @@ class PathsConfiguration
      */
     public static function testValue($key, $value)
     {
-        if (!is_string($value)) {
-            throw new Exception\InvalidValueException(sprintf(
-                'Configuration value "%s" is expected to be a string.',
-                $key
-            ));
+        $msg = 'Configuration value "%s" is expected to be a %s.';
+        
+        switch($key) {
+            case self::KEY_RELATIVE_ON_DEBUG:
+                if (!is_bool($value)) {
+                    throw new Exception\InvalidValueException(sprintf(
+                        $msg,
+                        $key,
+                        "boolean"
+                    ));
+                }
+                break;
+            default:
+                if (!is_string($value)) {
+                    throw new Exception\InvalidValueException(sprintf(
+                        $msg,
+                        $key,
+                        "string"
+                    ));
+                }
+                break;
         }
+
         
         return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected static function cast($key, &$value)
+    {
+        switch($key) {
+            case self::KEY_RELATIVE_ON_DEBUG:
+                if (is_int($value)) {
+                    $value = (bool)$value;
+                }
+                break;
+        }
     }
 }

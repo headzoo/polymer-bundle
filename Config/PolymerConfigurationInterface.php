@@ -7,16 +7,14 @@ namespace Headzoo\Bundle\PolymerBundle\Config;
 interface PolymerConfigurationInterface
     extends ArrayConfigurationInterface
 {
-    const KEY_TWIG = "twig";
-    const KEY_PATHS = "paths";
-    const KEY_IMPORTS = "imports";
+    const KEY_TWIG          = "twig";
+    const KEY_PATHS         = "paths";
+    const KEY_AUTO_IMPORTS  = "auto_imports";
     const KEY_AUTO_VERBATIM = "auto_verbatim";
-    const KEY_DEBUG = "debug";
-    const KEY_USE_CONTROLLER = "use_controller";
+    const KEY_DEBUG         = "debug";
     
     const DEFAULT_AUTO_VERBATIM = true;
-    const DEFAULT_DEBUG = false;
-    const DEFAULT_USE_CONTROLLER = true;
+    const DEFAULT_DEBUG         = false;
     
     const ROUTE_IMPORT = "/_polymer/import";
 
@@ -25,7 +23,7 @@ interface PolymerConfigurationInterface
      * 
      * @return array
      */
-    public function getImports();
+    public function getAutoImports();
 
     /**
      * Sets the list of elements to import automatically
@@ -34,14 +32,14 @@ interface PolymerConfigurationInterface
      *
      * @return $this
      */
-    public function setImports(array $imports);
+    public function setAutoImports(array $imports);
 
     /**
      * Gets a boolean indicating whether auto_verbatim is turned on
      * 
      * @return bool
      */
-    public function getAutoVerbatim();
+    public function isAutoVerbatim();
 
     /**
      * Sets a boolean indicating whether auto_verbatim is turned on
@@ -57,7 +55,7 @@ interface PolymerConfigurationInterface
      * 
      * @return bool
      */
-    public function getDebug();
+    public function isDebug();
 
     /**
      * Sets whether debugging is enabled
@@ -67,22 +65,6 @@ interface PolymerConfigurationInterface
      * @return $this
      */
     public function setDebug($debug);
-
-    /**
-     * Gets whether the controller is used to resolve element urls
-     * 
-     * @return bool
-     */
-    public function getUseController();
-
-    /**
-     * Sets whether the controller is used to resolve element urls
-     * 
-     * @param bool $use_controller
-     *
-     * @return $this
-     */
-    public function setUseController($use_controller);
     
     /**
      * Gets the Twig configuration

@@ -140,8 +140,7 @@ class PolymerConfigurationTest
         return [
             PolymerConfiguration::KEY_AUTO_VERBATIM => PolymerConfiguration::DEFAULT_AUTO_VERBATIM,
             PolymerConfiguration::KEY_DEBUG => PolymerConfiguration::DEFAULT_DEBUG,
-            PolymerConfiguration::KEY_USE_CONTROLLER => PolymerConfiguration::DEFAULT_USE_CONTROLLER,
-            PolymerConfiguration::KEY_IMPORTS => [],
+            PolymerConfiguration::KEY_AUTO_IMPORTS => [],
             PolymerConfiguration::KEY_TWIG => [
                 TwigConfiguration::KEY_TAG => TwigConfiguration::DEFAULT_TAG,
                 TwigConfiguration::KEY_TEMPLATES => [

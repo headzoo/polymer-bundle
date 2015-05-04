@@ -1,6 +1,6 @@
 {% polymer import "polymer.html" %}
-{% for file in polymer.configuration.imports %}
-    {% polymer import file %}
+{% for file in polymer.configuration.autoImports %}
+{% polymer import file %}
 {% endfor %}
 
 <polymer-element name="{{ polymer_element_name }}"{% for name, value in polymer_attributes %} {% if value %}{{ name }}="{{ value }}"{% else %}{{ name }}{% endif %}{% endfor %} >

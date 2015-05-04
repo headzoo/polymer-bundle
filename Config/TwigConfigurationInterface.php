@@ -7,12 +7,14 @@ namespace Headzoo\Bundle\PolymerBundle\Config;
 interface TwigConfigurationInterface
     extends ArrayConfigurationInterface
 {
-    const DEFAULT_TAG = "polymer";
-    const DEFAULT_TEMPLATE_IMPORT = "PolymerBundle:polymer:import.html.twig";
+    const DEFAULT_TAG              = "polymer";
+    const DEFAULT_TEMPLATE_IMPORT  = "PolymerBundle:polymer:import.html.twig";
     const DEFAULT_TEMPLATE_ELEMENT = "PolymerBundle:polymer:element.html.twig";
-    const KEY_TAG = "tag";
+    
+    const KEY_TAG       = "tag";
     const KEY_TEMPLATES = "templates";
-    const TEMPLATE_IMPORT = "import";
+    
+    const TEMPLATE_IMPORT  = "import";
     const TEMPLATE_ELEMENT = "element";
 
     /**

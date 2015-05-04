@@ -22,7 +22,7 @@ class Configuration
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('polymer');
+        $rootNode = $treeBuilder->root("polymer");
         
         $this->parseImports($rootNode);
         $this->parseTwig($rootNode);
@@ -42,15 +42,12 @@ class Configuration
             ->booleanNode(PolymerConfiguration::KEY_DEBUG)
                 ->defaultValue(PolymerConfiguration::getDefault(PolymerConfiguration::KEY_DEBUG))
             ->end()
-            ->booleanNode(PolymerConfiguration::KEY_USE_CONTROLLER)
-                ->defaultValue(PolymerConfiguration::getDefault(PolymerConfiguration::KEY_USE_CONTROLLER))
-            ->end()
             ->booleanNode(PolymerConfiguration::KEY_AUTO_VERBATIM)
                 ->defaultValue(PolymerConfiguration::getDefault(PolymerConfiguration::KEY_AUTO_VERBATIM))
             ->end()
-            ->arrayNode(PolymerConfiguration::KEY_IMPORTS)
+            ->arrayNode(PolymerConfiguration::KEY_AUTO_IMPORTS)
                     ->prototype("scalar")
-                    ->defaultValue(PolymerConfiguration::getDefault(PolymerConfiguration::KEY_IMPORTS))
+                    ->defaultValue(PolymerConfiguration::getDefault(PolymerConfiguration::KEY_AUTO_IMPORTS))
                 ->end()
             ->end();
     }
@@ -89,6 +86,9 @@ class Configuration
             ->arrayNode(PolymerConfiguration::KEY_PATHS)
                 ->addDefaultsIfNotSet()
                 ->children()
+                    ->booleanNode(PathsConfiguration::KEY_RELATIVE_ON_DEBUG)
+                        ->defaultValue(PathsConfiguration::getDefault(PathsConfiguration::KEY_RELATIVE_ON_DEBUG))
+                        ->end()  
                     ->scalarNode(PathsConfiguration::KEY_ELEMENTS)
                         ->defaultValue(PathsConfiguration::getDefault(PathsConfiguration::KEY_ELEMENTS))
                         ->end()

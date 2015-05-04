@@ -3,7 +3,6 @@ namespace Headzoo\Bundle\PolymerBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Used to import element paths when debugging.
@@ -23,14 +22,10 @@ class ImportController
             throw $this->createNotFoundException();
         }
         
-        try {
-            $configuration = $this->get("polymer.configuration");
-            $elements_path = $configuration->getPaths()->getElements();
-            $resource_path = "@{$bundle}/Resources/public/{$elements_path}/{$element}";
+        $configuration = $this->get("polymer.configuration");
+        $elements_path = $configuration->getPaths()->getElements();
+        $resource_path = "@{$bundle}/Resources/public/{$elements_path}/{$element}";
 
-            return $this->render($this->get("kernel")->locateResource($resource_path));
-        } catch (\Exception $e) {
-            throw $this->createNotFoundException();
-        }
+        return $this->render($this->get("kernel")->locateResource($resource_path));
     }
 }

@@ -96,7 +96,7 @@ class PolymerExtension
      */
     private function setupTwig(ContainerBuilder $container)
     {
-        if ($this->configuration->getAutoVerbatim()) {
+        if ($this->configuration->isAutoVerbatim()) {
             $definition = new Definition();
             $definition->setClass(Environment::class);
             $definition->setArguments(
