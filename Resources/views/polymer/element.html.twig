@@ -1,3 +1,13 @@
+{#
+    The following variables are created in this scope:
+    
+      polymer_element_name (string) The name of the element/tag, e.g. "hello-world".
+      polymer_attributes   (array)  Attributes passed to the {% polymer element %} tag as a key/value array.
+      polymer_body         (string) The content (html/css/js) from inside the opening and
+                                    closing {% polymer element %} tags.
+    
+    As always the polymer configuration is made available through the polymer.configuration variable.
+#}
 {% polymer import "polymer.html" %}
 {% for file in polymer.configuration.autoImports %}
 {% polymer import file %}

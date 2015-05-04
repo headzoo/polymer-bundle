@@ -31,18 +31,12 @@ class ImportNode
      */
     public function compile(Twig_Compiler $compiler)
     {
-        $file_type = ($this->getAttribute("file_type")->getValue() == "")
-            ? "components"
-            : "elements";
-        $template  = TwigConfigurationInterface::TEMPLATE_IMPORT;
-        
+        $template = TwigConfigurationInterface::TEMPLATE_IMPORT;
         foreach ($this->getAttribute("file_names") as $file_name) {
             $compiler
                 ->addDebugInfo($this)
-                ->write('$tmp = ["polymer_file_name" => ')
+                ->write('$tmp = ["polymer_asset_name" => ')
                 ->subcompile($file_name)
-                ->raw(', "polymer_file_type" => ')
-                ->string($file_type)
                 ->raw('];')
                 ->raw("\n")
                 ->write('$template = $context["polymer"]["configuration"]->getTwig()->getTemplate(')
