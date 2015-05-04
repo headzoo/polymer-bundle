@@ -3,7 +3,6 @@ Follow the steps below to install the bundle.
 
 ### Requirements
 PHP 5.5.*  
-Composer  
 Symfony 2.6.*
 
 ### Installing
