@@ -1,0 +1,17 @@
+site_name: "Polyphonic Polymer Bundle"
+repo_url: "https://github.com/headzoo/polyphonic-symfony"
+site_author: "Sean Hickey"
+copyright: "2015, Sean Hickey"
+markdown_extensions: [fenced_code]
+theme: "readthedocs"
+docs_dir: Resources/doc
+
+pages:
+- ["index.md", "Home"]
+- ["installing.md", "Installing"]
+- ["configuration.md", "Configuration"]
+- ["importing.md", "Importing Elements"]
+- ["custom.md", "Creating Custom Elements"]
+- ["deploy.md", "Deploying Your App"]
+- ["about/credits.md", "About", "Credits"]
+- ["about/license.md", "About", "License"]
