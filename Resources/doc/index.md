@@ -5,7 +5,7 @@ Symfony framework bundle and Twig extension for developing and deploying Polymer
 [![Build Status](https://img.shields.io/travis/headzoo/polyphonic-symfony/master.svg?style=flat-square)](https://travis-ci.org/headzoo/polyphonic-symfony)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/polyphonic-symfony/master/LICENSE.md)
 
-![Symfony, Polymer, Twig](/images/logo.png)
+![Symfony, Polymer, Twig](images/logo.png)
 
 **This bundle is no where near production ready. It's not even dev ready. Use at your own risk.**
 
