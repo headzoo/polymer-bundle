@@ -12,7 +12,7 @@ This document assumes you have used [Bower](http://bower.io/) to install Polymer
 `web/bower_components` directory. By default Polyphonic is configured to look for
 components in that directory.
 
-#### Hello World
+## Hello World
 To get started lets look at how we would create a simple `<hello-world>` element
 outside of a Symfony project using plain HTML5 and JavaScript. 
 
@@ -65,7 +65,7 @@ within a Symfony project. Lets rewrite our component using the bundle syntax.
 This lesson assumes you already have a Symfony bundle generated for your
 application. The bundle name **AcmeBundle** will be used.
 
-#### The Polymer Tag
+## The Polymer Tag
 Start by creating a file for your component inside your bundle directory.
 Polyphonic expects your component templates to be saved in the bundle's
 `Resources/public/elements` directory along with your bundles other assets.
@@ -109,7 +109,7 @@ The similarities should be apparent. We add two attributes to the `{% polymer el
 
 The code between the tags is identical. The difference when using the `{% polymer element %}` element tag is the code between the opening and close tag is ignored by Twig. An exception **will not** be thrown because of the `{{name}}` variable.
 
-### Importing Your Component
+## Importing Your Component
 Now you can use the element in your templates with the following code:
 
 ```html
@@ -140,7 +140,7 @@ Polyphonic will automatically resolve the component URL when using the `{% polym
 {% polymer import "@AcmeBundle:hello-world.html" %}
 ```
 
-### Importing Multiple Assets
+## Importing Multiple Assets
 The same `{% polymer import %}` tag can be used to import multiple components.
 
 ```html
@@ -156,7 +156,7 @@ The same `{% polymer import %}` tag can be used to import multiple components.
 
 You've probably seen similar syntax when using the `{% stylesheets %}` and `{% javascripts %}` tags.
 
-### The Twig Tag
+## The Twig Tag
 Twig ignores *all* code between the `{% polymer element %}{% endpolymer %}` tag, which means you cannot use Twig tags or variables inside your component definition. The following code will not produce the expected results:
 
 ```html
@@ -205,5 +205,4 @@ Hello, World! Count with me!
 3!
 ```
 
-### Next
 The [Importing Components documentation](importing.md) completely covers using the `{% polymer import %}` tag.
