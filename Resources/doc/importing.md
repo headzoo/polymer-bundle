@@ -4,12 +4,12 @@ you can also use the `{% polymer import %}` tag. The Twig tag generates `<link>`
 but is more beneficial than using a `<link>` tag directory. This document covers
 those benefits.
 
-### Syntax:
+## Syntax:
 ```html
 {% polymer import <asset name> [<asset name>...] %}
 ```
 
-##### Example 1:
+#### Example 1:
 ```html
 {% polymer import "@AcmeBundle:hello-world/hello-world.html.twig" %}
 {% polymer import "paper-elements/paper-elements.html" %}
@@ -24,7 +24,7 @@ is the preferred format, and the format used through most of the documentation.
 {% polymer import "paper-elements.html" %}
 ```
 
-##### Example 2:
+#### Example 2:
 You can import multiple assets using a single `{% polymer import %}` tag.
 
 ```html
@@ -39,12 +39,12 @@ You can import multiple assets using a single `{% polymer import %}` tag.
 %}
 ```
 
-### Core Components
+## Core Components
 Core Polymer components -- such as those installed using Bower -- are expected to
 be saved in the directory `www/bower_components/`. This location may be changed
 using the [polymer.paths.components](configuration.md#pathscomponents) setting.
 
-##### Example:
+#### Example:
 ```html
 {% polymer import "paper-elements.html" %}
 {% polymer import "core-ajax.html" "core-animation.html" %}
@@ -58,7 +58,7 @@ Generates these `<link>` tags:
 <link rel="import" href="/bower_components/core-animation/core-animation.html">
 ```
 
-### Custom Components
+## Custom Components
 You can write custom elements for your bundle and import them using the
 `@BundleName:path-to-element.html` syntax. The location may be changed using the
 [polymer.paths.elements](configuration.md#pathselements) setting. See the
@@ -70,7 +70,7 @@ the other bundles in the Symfony `src/` directory. For example `src/Acme/Bundle/
 The asset name `@AcmeBundle:hello-world/hello-world.html.twig` is expected to be
 found in the directory `AcmeBundle/Resources/public/elements/hello-world/hello-world.html`.
 
-##### Example:
+#### Example:
 ```html
 {% polymer import "@AcmeBundle:hello-world/hello-world.html.twig" %}
 ```
@@ -82,8 +82,7 @@ the file name.
 {% polymer import "@AcmeBundle:hello-world.html.twig" %}
 ```
 
-##### Resolving Paths
-
+#### Resolving Paths
 *How* the path to your custom elements gets resolved to a URL depends on the
 [polymer.debug](configuration.md#debug) setting. When debugging is turned on
 the `Headzoo\Bundle\PolymerBundle\Controller` controller is used to output the
@@ -121,11 +120,11 @@ Will generate this `<link>` tag:
 _Note: The ".html.twig" extension is changed to ".html" in the link href attribute._
 
 
-### Other Elements
+## Other Elements
 Sometimes you may need to import an element a full URL or relative path. You can do
 that by starting the asset name with a `/` character, or `http://`, or `https://`.
 
-##### Example:
+#### Example:
 ```html
 {% polymer import "/some-element/some-element.html" %}
 {% polymer import "http://example.com/some-element/some-element.html" %}

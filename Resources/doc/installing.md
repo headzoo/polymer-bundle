@@ -1,11 +1,11 @@
 ## Installing
 Follow the steps below to install the bundle.
 
-### Requirements
+## Requirements
 PHP 5.5.*  
 Symfony 2.6.*
 
-### Installing
+## Installing
 Add `headzoo/polymer-bundle` to your composer.json requirements.
 
 ```javascript
