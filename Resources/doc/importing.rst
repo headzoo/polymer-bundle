@@ -62,10 +62,10 @@ you the option to set your assets inside a controller.
 	
 	{% set asset1 = "core-ajax.html" %}
 	{% set asset2 = "core-menu.html" %}
-	
 	{% polymer import asset1 asset2 %}
-	{% polymer import [asset1, asset2] %}
 
+	{% set all_assets = [asset1, asset2] %}
+	{% polymer import all_assets %}
 
 Core Components
 ---------------
