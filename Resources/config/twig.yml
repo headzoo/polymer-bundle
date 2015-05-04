@@ -24,7 +24,7 @@ services:
         class: %polymer.twig.functions.paths.class%
         parent: polymer.twig.parent.config_aware
         arguments:
-            - @polymer.util.web_path_resolver
+            - @polymer.util.path_resolver
         tags:
             - { name: polymer.twig.function }
 

@@ -2,17 +2,17 @@
 namespace Headzoo\Bundle\PolymerBundle\Tests\Util;
 
 use Headzoo\Bundle\PolymerBundle\Config\PolymerConfiguration;
-use Headzoo\Bundle\PolymerBundle\Util\WebPathResolver;
+use Headzoo\Bundle\PolymerBundle\Util\PathResolver;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
- * @coversDefaultClass \Headzoo\Bundle\PolymerBundle\Util\WebPathResolver
+ * @coversDefaultClass \Headzoo\Bundle\PolymerBundle\Util\PathResolver
  */
-class WebPathResolverTest
+class PathResolverTest
     extends KernelTestCase
 {
     /**
-     * @var WebPathResolver
+     * @var PathResolver
      */
     protected $fixture;
 
@@ -29,30 +29,29 @@ class WebPathResolverTest
      */
     public function setUp()
     {
-        $this->fixture = new WebPathResolver(static::$kernel);
-        $this->fixture->setConfiguration(new PolymerConfiguration());
+        $this->fixture = new PathResolver(new PolymerConfiguration(), static::$kernel);
     }
 
     /**
      * @covers ::getPrefix
      */
-    public function testGetPrefix()
+    public function testGetBundleWebPrefix()
     {
         $this->assertEquals(
             "/bundles/polymer",
-            $this->fixture->getPrefix("PolymerBundle")
+            $this->fixture->getBundleWebPrefix("PolymerBundle")
         );
     }
 
     /**
      * @covers ::getPath
      */
-    public function testGetPath()
+    public function testGetBundleWebPath()
     {
         $elements_path = (new PolymerConfiguration())->getPaths()->getElements();
         $this->assertEquals(
             "/bundles/polymer/{$elements_path}/hello-world/hello-world.html",
-            $this->fixture->getPath("PolymerBundle", "hello-world/hello-world.html")
+            $this->fixture->getBundleWebPath("PolymerBundle", "hello-world/hello-world.html")
         );
     }
 }

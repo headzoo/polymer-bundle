@@ -3,7 +3,7 @@ namespace Headzoo\Bundle\PolymerBundle\Twig\Functions;
 
 use Headzoo\Bundle\PolymerBundle\Config\PolymerConfiguration;
 use Headzoo\Bundle\PolymerBundle\Config\PolymerConfigurationAwareTrait;
-use Headzoo\Bundle\PolymerBundle\Util\WebPathResolver;
+use Headzoo\Bundle\PolymerBundle\Util\PathResolver;
 
 /**
  * Polymer paths and urls related Twig functions.
@@ -14,16 +14,16 @@ class PathsProvider
     use PolymerConfigurationAwareTrait;
     
     /**
-     * @var WebPathResolver
+     * @var PathResolver
      */
     private $web_path_resolver;
 
     /**
      * Constructor
      *
-     * @param WebPathResolver $web_path_resolver
+     * @param PathResolver $web_path_resolver
      */
-    public function __construct(WebPathResolver $web_path_resolver)
+    public function __construct(PathResolver $web_path_resolver)
     {
         $this->web_path_resolver = $web_path_resolver;
     }
@@ -128,6 +128,6 @@ class PathsProvider
         // "@PolymerBundle:hello-world/hello-world.html.twig"
         $parts = explode(":", substr($file_name, 1), 2);
         
-        return $this->web_path_resolver->getPath($parts[0], $parts[1]);
+        return $this->web_path_resolver->getBundleWebPath($parts[0], $parts[1]);
     }
 }

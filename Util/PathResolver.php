@@ -3,12 +3,13 @@ namespace Headzoo\Bundle\PolymerBundle\Util;
 
 use Headzoo\Bundle\PolymerBundle\Config\PolymerConfigurationAwareInterface;
 use Headzoo\Bundle\PolymerBundle\Config\PolymerConfigurationAwareTrait;
+use Headzoo\Bundle\PolymerBundle\Config\PolymerConfigurationInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 /**
  * Resolves paths to component urls.
  */
-class WebPathResolver
+class PathResolver
     implements PolymerConfigurationAwareInterface
 {
     use PolymerConfigurationAwareTrait;
@@ -21,10 +22,12 @@ class WebPathResolver
     /**
      * Constructor
      * 
-     * @param KernelInterface $kernel
+     * @param PolymerConfigurationInterface $configuration
+     * @param KernelInterface               $kernel
      */
-    public function __construct(KernelInterface $kernel)
+    public function __construct(PolymerConfigurationInterface $configuration, KernelInterface $kernel)
     {
+        $this->setConfiguration($configuration);
         $this->kernel = $kernel;
     }
     
@@ -36,19 +39,9 @@ class WebPathResolver
      * @return string Prefix
      * @throws Exception\PathNotFoundException
      */
-    public function getPrefix($bundle_name)
+    public function getBundleWebPrefix($bundle_name)
     {
-        $elements_path = $this->configuration->getPaths()->getElements();
-        $resource_path = "/Resources/public/{$elements_path}";
-        $bundle        = $this->kernel->getBundle($bundle_name);
-        
-        if (!is_dir($bundle->getPath() . $resource_path)) {
-            throw new Exception\PathNotFoundException(sprintf(
-                'Bundle "%s" does not have "%s" folder',
-                $bundle->getName(),
-                $resource_path
-            ));
-        }
+        $bundle = $this->kernel->getBundle($bundle_name);
 
         return sprintf(
             "/bundles/%s",
@@ -64,9 +57,9 @@ class WebPathResolver
      *
      * @return string
      */
-    public function getPath($bundle_name, $file_name)
+    public function getBundleWebPath($bundle_name, $file_name)
     {
-        $prefix = $this->getPrefix($bundle_name);
+        $prefix = $this->getBundleWebPrefix($bundle_name);
         $elements_path = $this->configuration->getPaths()->getElements();
         
         return sprintf('%s/%s/%s', $prefix, $elements_path, $file_name);
