@@ -16,22 +16,22 @@ lexers['html'] = CheetahHtmlLexer()
 
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.todo',
     'sphinx.ext.ifconfig',
 ]
 
-templates_path = ['_templates']
-source_suffix = '.rst'
-master_doc = 'index'
 project = u'Polyphonic Polymer Bundle'
 copyright = u'2015, Sean Hickey'
 author = u'Sean Hickey'
 version = '0.0.4'
 release = '0.0.4'
 language = "en"
+
+templates_path = ['_templates']
 exclude_patterns = ['_build']
+source_suffix = '.rst'
+master_doc = 'index'
 pygments_style = 'sphinx'
-todo_include_todos = True
+
 html_title = "Polyphonic Polymer Bundle"
 html_short_title = "Polyphonic"
 html_static_path = ['_static']

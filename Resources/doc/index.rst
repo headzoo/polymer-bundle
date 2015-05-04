@@ -21,7 +21,6 @@ that come up when trying to build and use web components within Twig
 templates.
 
 .. toctree::
-	index.rst
 	installing.rst
 	configuration.rst
 	custom.rst
