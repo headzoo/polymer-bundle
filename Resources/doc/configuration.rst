@@ -63,7 +63,7 @@ A list of components to import automatically when using the
 elements need to import the same components. Using the following
 setting:
 
-::
+.. sourcecode:: yaml
 
     polymer:
         auto_imports:
