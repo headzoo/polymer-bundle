@@ -12,8 +12,8 @@ web components.
 .. figure:: images/logo.png
    :alt: Symfony, Polymer, Twig
 
-**This bundle is no where near production ready. It's not even dev
-ready. Use at your own risk.**
+.. important::
+	This bundle is no where near production ready. Use at your own risk.
 
 The purpose of this bundle is making it easier to use and build Polymer
 web components within a Symfony project. Polyphonic handles the problems
