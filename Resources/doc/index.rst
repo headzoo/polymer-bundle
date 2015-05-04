@@ -70,6 +70,7 @@ in a directory of the same name, e.g. ``hello-world``.
 	custom.rst
 	importing.rst
 	deploy.rst
+	extension.rst
 	
 	about/credits.rst
 	about/license.rst
