@@ -15,10 +15,10 @@ web components.
 .. important::
 	This bundle is no where near production ready. Use at your own risk.
 
-The purpose of this bundle is making it easier to use and build Polymer
-web components within a Symfony project. Polyphonic handles the problems
-that come up when trying to build and use web components within Twig
-templates.
+Creating and using custom Polymer elements within a Twig environment
+can be difficult and error prone, because both Polymer and Twig use the
+same ``{{double mustache}}`` syntax for variables and expressions.
+
 
 Quick Start
 -----------

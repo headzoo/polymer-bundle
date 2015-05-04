@@ -39,3 +39,11 @@ Run ``composer update`` and then add the bundle your AppKernel.php.
         }
     }
 
+Add the following route to your ``app/config/routing_dev.yml`` file.
+
+.. sourcecode:: yaml
+
+	polymer:
+		resource: "@PolymerBundle/Resources/config/routing.yml"
+		prefix:   /_polymer
+		

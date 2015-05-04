@@ -78,4 +78,12 @@ class AppKernel extends Kernel
 }
 ```
 
+Add the following route to your `app/config/routing_dev.yml` file.
+
+```yaml
+polymer:
+	resource: "@PolymerBundle/Resources/config/routing.yml"
+	prefix:   /_polymer
+```
+
 Next: [Read the full documentation](http://www.polyphonic-symfony.org)
