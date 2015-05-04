@@ -19,7 +19,7 @@ polymer:
         components: bower_components
 ```
 
-### debug
+## debug
 Default: `true`
 
 Turns debugging on and off. This setting dictates how the `{% polymer import %}` tag resolves
@@ -31,7 +31,7 @@ to the `/web` directory. Including your custom elements. The Polyphonic bundle w
 for your custom elements in the directory `/web/bundles/your_bundle/elements` directory.
 
 
-### auto_verbatim
+## auto_verbatim
 Default: `true`
 
 The bundle configures Twig to ignore code between {% polymer %} tags, which is *usually* what you want.
@@ -42,7 +42,7 @@ Twig's own `{% verbatim %}{% endverbatim %}` tag.
 
 See the [Creating Elements](custom.md) documentation for more information.
 
-### auto_imports
+## auto_imports
 Default: `[]`
 
 A list of components to import automatically when using the `{% polymer element %}` tag.
@@ -73,7 +73,7 @@ Will generate the these import statements whenever you use the `{% polymer eleme
 
 See the [Importing Components](importing.md) documentation for more information.
 
-### twig.tag
+## twig.tag
 Default: `"polymer"`
 
 If you need to you can change the `{% polymer %}` tags to use a different value. For instance
@@ -84,17 +84,17 @@ if you set this setting to "poly" you would then use the tags `{% poly element %
 > need to. Setting it to a different value may break other bundles that reply on the
 > Polyphonic bundle._
 
-### twig.templates.element
+## twig.templates.element
 Default: `"PolymerBundle:polymer:element.html.twig"`
 
 Path to the template used to create `<polymer-element>` tags.
 
-### twig.templates.import
+## twig.templates.import
 Default: `"PolymerBundle:polymer:import.html.twig"`
 
 Path to the template used to create `<link rel="import">` tags.
 
-### paths.elements
+## paths.elements
 Default: `"elements"`
 
 Specifies the directory inside your bundle `Resources/public` directory where custom
@@ -105,7 +105,7 @@ custom elements in the `Resources/public/elements` directory.
 > need to. Setting it to a different value may break other bundles that reply on the
 > Polyphonic bundle._
 
-### paths.components
+## paths.components
 Defaults: `"bower_components"`
 
 Specifies the directory inside your project `/web` directory where Polymer's core components
