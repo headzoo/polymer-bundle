@@ -73,18 +73,6 @@ class PathResolverTest
     }
 
     /**
-     * @covers ::getBundleRelativeWebPath
-     */
-    public function testGetBundleRelativeWebPath()
-    {
-        $elements_path = (new PolymerConfiguration())->getPaths()->getElements();
-        $this->assertEquals(
-            "/../src/Headzoo/Bundle/PolymerBundle/Resources/public/{$elements_path}/hello-world/hello-world.html",
-            $this->fixture->getBundleRelativeWebPath("PolymerBundle", "hello-world/hello-world.html")
-        );
-    }
-
-    /**
      * @covers ::getImportUrl
      * @dataProvider dataProviderGetImportUrl
      * 
