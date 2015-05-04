@@ -1,2 +1,2 @@
-## Deploying Your App
+# Deploying Your App
 Coming soon... (Hint: Use `assets:install`)

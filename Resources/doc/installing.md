@@ -1,4 +1,4 @@
-## Installing
+# Installing
 Follow the steps below to install the bundle.
 
 ## Requirements
