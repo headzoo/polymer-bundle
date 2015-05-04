@@ -3,11 +3,12 @@
 Symfony bundle and Twig extension for developing and deploying Polymer web components.
 
 [![Build Status](https://img.shields.io/travis/headzoo/polymer-bundle/master.svg?style=flat-square)](https://travis-ci.org/headzoo/polymer-bundle)
+[![Documentation](https://img.shields.io/badge/documentation-readthedocs-blue.svg?style=flat-square)](http://www.polyphonic-symfony.org)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/polymer-bundle/master/LICENSE.md)
 
 ![Polyphonic Symfony](http://i.imgur.com/DukYX3u.png)
 
-**This bundle is no where near production ready. It's not even dev ready. Use at your own risk.**
+**This bundle is no where near production ready. Use at your own risk.**
 
 The purpose of this bundle is making it easier to use and build Polymer web components within a Symfony project.
 Polyphonic handles the problems that come up when trying to build and use web components within Twig templates.
@@ -77,4 +78,4 @@ class AppKernel extends Kernel
 }
 ```
 
-Next: [Read the full documentation](Resources/doc/index.md)
+Next: [Read the full documentation](http://www.polyphonic-symfony.org)
