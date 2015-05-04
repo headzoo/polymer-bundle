@@ -22,7 +22,7 @@ To get started lets look at how we would create a simple
 ``<hello-world>`` element outside of a Symfony project using plain HTML5
 and JavaScript.
 
-.. code:: html
+.. sourcecode:: html
 
     <link rel="import" href="/bower_components/polymer/polymer.html">
 
@@ -39,7 +39,7 @@ and JavaScript.
 
 You can now use the element by importing it.
 
-.. code:: html
+.. sourcecode:: html
 
     <link rel="import" href="/some/directory/hello-world/hello-world.html">
 
@@ -52,7 +52,7 @@ You can now use the element by importing it.
 As you can see creating custom web components with Polymer is easy, but
 as Symfony/Twig developers we run into a problem with this line of code:
 
-.. code:: html
+.. sourcecode:: html
 
     <p>Hello, {{name}}!</p>
 
@@ -82,7 +82,7 @@ bundles other assets. Create the file
 ``AcmeBundle/Resources/public/elements/hello-world/hello-world.html``,
 and add the following code.
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer element "hello-world" attributes="names" %}
         <template>
@@ -101,19 +101,19 @@ HTML5/JS and Polyphonic.
 With the Polyphonic you do not explicity import polymer.html with a
 ``<link>`` tag. It's done for you automatically.
 
-.. code:: html
+.. sourcecode:: html
 
     <link rel="import" href="/bower_components/polymer/polymer.html">
 
 Next, instead of wrapping your component code in the following tag:
 
-.. code:: html
+.. sourcecode:: html
 
     <polymer-element name="hello-world" attributes="name"></polymer-element>
 
 We use the ``{% polymer element %}`` tag:
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer element "hello-world" attributes="names" %}{% endpolymer %}
 
@@ -133,7 +133,7 @@ Importing Your Component
 
 Now you can use the element in your templates with the following code:
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world/hello-world.html" %}
 
@@ -146,13 +146,13 @@ Now you can use the element in your templates with the following code:
 This code is also slightly different from using plain HTML5/JS. Instead
 of using the following code to import your custom element:
 
-.. code:: html
+.. sourcecode:: html
 
     <link rel="import" href="/some/directory/hello-world/hello-world.html">
 
 You use this code:
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world/hello-world.html" %}
 
@@ -162,7 +162,7 @@ provides a shortcut when the base file name of your ``.html`` file is
 the same as the directory where it's save. The above statement could be
 shortended to this:
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world.html" %}
 
@@ -172,7 +172,7 @@ Importing Multiple Assets
 The same ``{% polymer import %}`` tag can be used to import multiple
 components.
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world.html" "@AcmeBundle:custom-icons" "@AcmeBundle:custom-menu" %}
 
@@ -194,7 +194,7 @@ Twig ignores *all* code between the
 use Twig tags or variables inside your component definition. The
 following code will not produce the expected results:
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer element "hello-world" attributes="names" %}
         <template>
@@ -216,7 +216,7 @@ simply be output as plain text. Also Polymer will try to parse the
 ``<twig>`` tag if you want to include template code inside your element
 definition.
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer element "hello-world" attributes="names" %}
         <template>
