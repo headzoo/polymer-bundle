@@ -68,10 +68,8 @@ Will generate the these import statements whenever you use the `{% polymer eleme
 {% endpolymer %}
 ```
 
-<span style="background-color:#b1d7ef">
 > _Note: You do not add "polymer/polymer.html" to this setting. It's automatically
 > imported every time you write a {% polymer element %} tag._
-</span>
 
 See the [Importing Components](importing.md) documentation for more information.
 
@@ -82,11 +80,9 @@ If you need to you can change the `{% polymer %}` tags to use a different value.
 if you set this setting to "poly" you would then use the tags `{% poly element %}` and
 `{% poly import %}`.
 
-<span style="background-color:#b1d7ef">
 > _Important Note: This is an advanced setting that should not be changed unless you absolutely
 > need to. Setting it to a different value may break other bundles that reply on the
 > Polyphonic bundle._
-</span>
 
 ### twig.templates.element
 Default: `"PolymerBundle:polymer:element.html.twig"`
@@ -105,11 +101,9 @@ Specifies the directory inside your bundle `Resources/public` directory where cu
 elements are saved. When using the setting "elements" the bundle will look for your
 custom elements in the `Resources/public/elements` directory.
 
-<span style="background-color:#b1d7ef">
 > _Important Note: This is an advanced setting that should not be changed unless you absolutely
 > need to. Setting it to a different value may break other bundles that reply on the
 > Polyphonic bundle._
-</span>
 
 ### paths.components
 Defaults: `"bower_components"`
@@ -118,8 +112,6 @@ Specifies the directory inside your project `/web` directory where Polymer's cor
 are installed.  When using the setting "bower_components" the bundle will look for
 core components in the `/web/bower_components` directory.
 
-<span style="background-color:#b1d7ef">
 > _Important Note: This is an advanced setting that should not be changed unless you absolutely
 > need to. Setting it to a different value may break other bundles that reply on the
 > Polyphonic bundle._
-</span>
