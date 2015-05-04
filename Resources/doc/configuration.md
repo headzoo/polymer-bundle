@@ -20,7 +20,7 @@ polymer:
 ```
 
 ### debug
-Default: `false`
+Default: `true`
 
 Turns debugging on and off. This setting dictates how the `{% polymer import %}` tag resolves
 custom element paths. When debugging is turned on the Polyphonic bundle will serve your
