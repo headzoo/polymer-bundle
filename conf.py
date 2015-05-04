@@ -18,10 +18,15 @@ import shlex
 from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 from pygments.lexers.data import YamlLexer
+from pygments.lexers.templates import TwigHtmlLexer
+from pygments.lexers.templates import CheetahHtmlLexer
 
 lexers['php'] = PhpLexer(startinline=True, linenos=1)
 lexers['php-annotations'] = PhpLexer(startinline=True, linenos=1)
-lexers['yaml'] = YamlLexer(startinline=True, linenos=1)
+lexers['yaml'] = YamlLexer()
+lexers['twig'] = TwigHtmlLexer()
+lexers['html'] = CheetahHtmlLexer()
+
 
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -104,7 +109,7 @@ exclude_patterns = ['_build']
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+#pygments_style = 'sphinx'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
