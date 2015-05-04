@@ -59,12 +59,6 @@ Using the element in your views:
     <!-- Displays "Hello, Pascal!" -->
     <hello-world name="Pascal"></hello-world>
 
-Note, the import statement can also be written like this:
-
-.. sourcecode:: twig
-
-    {% polymer import "@AcmeBundle:hello-world.html.twig" %}
-
 Polyphonic assumes a file named ``hello-world.html.twig`` can be found
 in a directory of the same name, e.g. ``hello-world``.
 
