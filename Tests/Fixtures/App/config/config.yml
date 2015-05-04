@@ -38,16 +38,4 @@ assetic:
 
 # Polymer configuration.
 polymer:
-    auto_verbatim: true
-    debug:          %kernel.debug%
-    use_controller: true
-    imports:
-        - paper-elements
-    twig:
-        tag: polymer
-        templates:
-            element: PolymerBundle:polymer:element.html.twig
-            import: PolymerBundle:polymer:import.html.twig
-    paths:
-        elements: elements
-        components: bower_components
+nts: bower_components
