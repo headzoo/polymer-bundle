@@ -20,6 +20,17 @@ web components within a Symfony project. Polyphonic handles the problems
 that come up when trying to build and use web components within Twig
 templates.
 
+.. toctree::
+	index.rst
+	installing.rst
+	configuration.rst
+	custom.rst
+	importing.rst
+	deploy.rst
+	
+	about/credits.rst
+	about/license.rst
+
 Quick Start
 -----------
 
