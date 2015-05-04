@@ -1,7 +1,9 @@
 {#
     The following variables are created in this scope:
-      polymer_asset_name (string) The name of the asset to import, e.g. "hello-world/hello-world.html".
+      polymer_assets (array) An array of assets to import, e.g. ["core-icons.html", "core-menu.html"].
       
     As always the polymer configuration is made available through the polymer.configuration variable.
 #}
-<link rel="import" href="{{ polymer_asset(polymer_asset_name) }}">
+{% for asset in polymer_assets %}
+<link rel="import" href="{{ polymer_asset(asset) }}">
+{% endfor %}

@@ -49,16 +49,12 @@ class PolymerTokenParser
      */
     public function parseImport(Twig_Token $token)
     {
-        $lineno     = $token->getLine();
-        $stream     = $this->parser->getStream();
-        $file_names = [];
-        $file_type  = $stream->nextIf(Twig_Token::OPERATOR_TYPE, "~");
-        if (!$file_type) {
-            $file_type = new Twig_Token(Twig_Token::OPERATOR_TYPE, "", $lineno);
-        }
+        $lineno = $token->getLine();
+        $stream = $this->parser->getStream();
+        $assets = [];
 
         while(true) {
-            $file_names[] = $this->parser->getExpressionParser()->parseExpression();
+            $assets[] = $this->parser->getExpressionParser()->parseExpression();
             if ($stream->nextIf(Twig_Token::BLOCK_END_TYPE)) {
                 break;
             } else if ($next = $stream->look(0)) {
@@ -71,7 +67,7 @@ class PolymerTokenParser
             }
         }
 
-        return new ImportNode($file_names, $file_type, $lineno, $this->getTag());
+        return new ImportNode($assets, $lineno, $this->getTag());
     }
 
     /**

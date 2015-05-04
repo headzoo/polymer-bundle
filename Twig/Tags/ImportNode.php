@@ -4,7 +4,6 @@ namespace Headzoo\Bundle\PolymerBundle\Twig\Tags;
 use Headzoo\Bundle\PolymerBundle\Config\TwigConfigurationInterface;
 use Twig_Node_Expression;
 use Twig_Node;
-use Twig_Token;
 use Twig_Compiler;
 
 /**
@@ -16,14 +15,13 @@ class ImportNode
     /**
      * Constructor
      *
-     * @param Twig_Node_Expression[] $file_names
-     * @param Twig_Token             $file_type
+     * @param Twig_Node_Expression[] $assets
      * @param int                    $lineno
      * @param string                 $tag
      */
-    public function __construct(array $file_names, Twig_Token $file_type, $lineno, $tag)
+    public function __construct(array $assets, $lineno, $tag)
     {
-        parent::__construct([], ["file_names" => $file_names, "file_type" => $file_type], $lineno, $tag);
+        parent::__construct([], ["assets" => $assets], $lineno, $tag);
     }
 
     /**
@@ -32,12 +30,22 @@ class ImportNode
     public function compile(Twig_Compiler $compiler)
     {
         $template = TwigConfigurationInterface::TEMPLATE_IMPORT;
-        foreach ($this->getAttribute("file_names") as $file_name) {
+        
             $compiler
                 ->addDebugInfo($this)
-                ->write('$tmp = ["polymer_asset_name" => ')
-                ->subcompile($file_name)
-                ->raw('];')
+                ->write('$tmp = ["polymer_assets" => [')
+                ->raw("\n")
+                ->indent();
+        
+            foreach ($this->getAttribute("assets") as $file_name) {
+                $compiler
+                    ->subcompile($file_name, false)
+                    ->raw(",\n");
+            }
+        
+            $compiler
+                ->outdent()
+                ->write(']];')
                 ->raw("\n")
                 ->write('$template = $context["polymer"]["configuration"]->getTwig()->getTemplate(')
                 ->string($template)
@@ -45,7 +53,5 @@ class ImportNode
                 ->raw("\n\n")
                 ->write('$this->env->display($template, $tmp);')
                 ->raw("\n");
-        }
-
     }
 }
