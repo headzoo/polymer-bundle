@@ -33,19 +33,19 @@ class PathsProvider
     public function getFunctions()
     {
         return [
-            "import_url" => [$this, "getImportUrl"]
+            "asset" => [$this, "getAsset"]
         ];
     }
 
     /**
      * Returns an element or component url
      *
-     * @param string $file_name The name of the element/component
+     * @param string $asset The name of the element/component
      *
      * @return string
      */
-    public function getImportUrl($file_name)
+    public function getAsset($asset)
     {
-        return $this->path_resolver->getImportUrl($file_name);
+        return $this->path_resolver->getImportUrl($asset);
     }
 }
