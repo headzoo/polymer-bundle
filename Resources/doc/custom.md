@@ -34,7 +34,7 @@ outside of a Symfony project using plain HTML5 and JavaScript.
 You can now use the element by importing it.
 
 ```html
-<link rel="import" href="hello-world/hello-world.html">
+<link rel="import" href="/some/directory/hello-world/hello-world.html">
 
 <!-- Displays "Hello, World!" -->
 <hello-world></hello-world>
@@ -84,6 +84,30 @@ and add the following code.
 {% endpolymer %}
 ```
 
+Lets look at the differences between creating a component using plain HTML5/JS and Polyphonic.
+
+With the Polyphonic you do not explicity import polymer.html with a `<link>` tag. It's done for you automatically.
+
+```html
+<link rel="import" href="/bower_components/polymer/polymer.html">
+```
+
+Next, instead of wrapping your component code in the following tag:
+
+```html
+<polymer-element name="hello-world" attributes="name"></polymer-element>
+```
+
+We use the `{% polymer element %}` tag:
+
+```html
+{% polymer element "hello-world" attributes="names" %}{% endpolymer %}
+```
+
+The similarities should be apparent. We add two attributes to the `{% polymer element %}` tag: The name of the element, and the list of attributes. You can add any attribute that's valid in the `<polymer-element>` tag, for instance `constructor`, `noscript`, and `extends`.
+
+The code between the tags is identical. The difference when using the `{% polymer element %}` element tag is the code between the opening and close tag is ignored by Twig. An exception **will not** be thrown because of the `{{name}}` variable.
+
 Now you can use the element in your templates with the following code:
 
 ```html
@@ -95,3 +119,36 @@ Now you can use the element in your templates with the following code:
 <!-- Displays "Hello, Pascal!" -->
 <hello-world name="Pascal"></hello-world>
 ```
+
+This code is also slightly different from using plain HTML5/JS. Instead of using the following code to import your custom element:
+
+```html
+<link rel="import" href="/some/directory/hello-world/hello-world.html">
+```
+
+You use this code:
+
+```html
+{% polymer import "@AcmeBundle:hello-world/hello-world.html" %}
+```
+
+Polyphonic will automatically resolve the component URL when using the `{% polymer import %}` tag. The `{% polymer import %}` tag also provides a shortcut when the base file name of your `.html` file is the same as the directory where it's save. The above statement could be shortended to this:
+
+```html
+{% polymer import "@AcmeBundle:hello-world.html" %}
+```
+
+Additionally the same `{% polymer import %}` tag can be used to import multiple components.
+
+```html
+{% polymer import "@AcmeBundle:hello-world.html" "@AcmeBundle:custom-icons" "@AcmeBundle:custom-menu" %}
+
+<!-- You can write the asset names on separate lines as well. -->
+{% polymer import
+	"@AcmeBundle:hello-world.html"
+	"@AcmeBundle:custom-icons"
+	"@AcmeBundle:custom-menu"
+%}
+```
+
+You've probably seen similar syntax when using the `{% stylesheets %}` and `{% javascripts %}` tags.
