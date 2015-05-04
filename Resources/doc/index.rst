@@ -4,10 +4,10 @@ Polyphonic Polymer Bundle
 Symfony bundle and Twig extension for developing and deploying Polymer
 web components.
 
-.. |Build Status| image:: https://img.shields.io/travis/headzoo/polymer-bundle/master.svg?style=flat-square
-:target: https://travis-ci.org/headzoo/polymer-bundle
-.. |MIT License| image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-:target: https://raw.githubusercontent.com/headzoo/polymer-bundle/master/LICENSE.md
+.. image:: https://img.shields.io/travis/headzoo/polymer-bundle/master.svg?style=flat-square
+	:target: https://travis-ci.org/headzoo/polymer-bundle
+.. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
+	:target: https://raw.githubusercontent.com/headzoo/polymer-bundle/master/LICENSE.md
 
 .. figure:: images/logo.png
    :alt: Symfony, Polymer, Twig
