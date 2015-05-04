@@ -1,6 +1,6 @@
 {
   "name": "headzoo/polymer-bundle",
-  "description": "Symfony framework bundle and Twig extension for developing and deploying Polymer web components.",
+  "description": "Symfony bundle and Twig extension for developing and deploying Polymer web components.",
   "keywords": [
     "symfony",
     "twig",
@@ -8,14 +8,14 @@
     "web components",
     "javascript"
   ],
-  "homepage": "https://github.com/headzoo/polymer-bundle",
+  "homepage": "http://www.polyphonic-symfony.org",
   "type": "symfony-bundle",
   "license": "MIT",
   "authors": [
     {
       "name": "Sean Hickey",
       "email": "sean@headzoo.io",
-      "homepage": "http://headzoo.io/"
+      "homepage": "http://headzoo.io"
     }
   ],
   "require": {

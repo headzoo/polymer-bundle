@@ -1,6 +1,6 @@
 # Polyphonic Polymer Bundle
 
-Symfony framework bundle and Twig extension for developing and deploying Polymer web components.
+Symfony bundle and Twig extension for developing and deploying Polymer web components.
 
 [![Build Status](https://img.shields.io/travis/headzoo/polymer-bundle/master.svg?style=flat-square)](https://travis-ci.org/headzoo/polymer-bundle)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/polymer-bundle/master/LICENSE.md)
