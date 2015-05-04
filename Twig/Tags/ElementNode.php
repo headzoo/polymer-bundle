@@ -98,6 +98,5 @@ class ElementNode
             ->raw(');')
             ->write('$this->env->display($template, $tmp);')
             ->raw("\n");
-        //echo $compiler->getSource();die();
     }
 }

@@ -58,7 +58,8 @@ class PolymerTokenParser
             if ($stream->nextIf(Twig_Token::BLOCK_END_TYPE)) {
                 break;
             } else if ($next = $stream->look(0)) {
-                if ($next->getType() !== Twig_Token::STRING_TYPE) {
+                $type = $next->getType();
+                if ($type !== Twig_Token::STRING_TYPE && $type !== Twig_Token::NAME_TYPE) {
                     throw new Twig_Error_Syntax(sprintf(
                         'Unexpected token "%s". Expected STRING_TYPE.',
                         $next->getValue()
