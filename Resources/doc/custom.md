@@ -65,6 +65,7 @@ within a Symfony project. Lets rewrite our component using the bundle syntax.
 This lesson assumes you already have a Symfony bundle generated for your
 application. The bundle name **AcmeBundle** will be used.
 
+#### The Polymer Tag
 Start by creating a file for your component inside your bundle directory.
 Polyphonic expects your component templates to be saved in the bundle's
 `Resources/public/elements` directory along with your bundles other assets.
@@ -108,6 +109,7 @@ The similarities should be apparent. We add two attributes to the `{% polymer el
 
 The code between the tags is identical. The difference when using the `{% polymer element %}` element tag is the code between the opening and close tag is ignored by Twig. An exception **will not** be thrown because of the `{{name}}` variable.
 
+### Importing Your Component
 Now you can use the element in your templates with the following code:
 
 ```html
@@ -138,7 +140,8 @@ Polyphonic will automatically resolve the component URL when using the `{% polym
 {% polymer import "@AcmeBundle:hello-world.html" %}
 ```
 
-Additionally the same `{% polymer import %}` tag can be used to import multiple components.
+### Importing Multiple Assets
+The same `{% polymer import %}` tag can be used to import multiple components.
 
 ```html
 {% polymer import "@AcmeBundle:hello-world.html" "@AcmeBundle:custom-icons" "@AcmeBundle:custom-menu" %}
@@ -152,3 +155,55 @@ Additionally the same `{% polymer import %}` tag can be used to import multiple 
 ```
 
 You've probably seen similar syntax when using the `{% stylesheets %}` and `{% javascripts %}` tags.
+
+### The Twig Tag
+Twig ignores *all* code between the `{% polymer element %}{% endpolymer %}` tag, which means you cannot use Twig tags or variables inside your component definition. The following code will not produce the expected results:
+
+```html
+{% polymer element "hello-world" attributes="names" %}
+    <template>
+        <p>Hello, {{name}}! Count with me!</p>
+        {% for i in 0..3 %}
+            <p>{{i}}!</p>
+        {% endfor %}
+    </template>
+    <script>
+        Polymer({
+            name: "World"
+        });
+    </script>
+{% endpolymer %}
+```
+
+The `{% for i in 0..3 %}` tag will **not** get parsed by Twig. It will simply be output as plain text. Also Polymer will try to parse the `{{i}}` variable, which is not a valid property. You have to use the `<twig>` tag if you want to include template code inside your element definition.
+
+```html
+{% polymer element "hello-world" attributes="names" %}
+    <template>
+        <p>Hello, {{name}}! Count with me!</p>
+        <twig>
+            {% for i in 0..3 %}
+                <p>{{ i }}!</p>
+            {% endfor %}
+        </twig>
+    </template>
+    <script>
+        Polymer({
+            name: "World"
+        });
+    </script>
+{% endpolymer %}
+```
+
+You will get the expected output when using the `<hello-world>` tag.
+
+```
+Hello, World! Count with me!
+0!
+1!
+2!
+3!
+```
+
+### Next
+The [Importing Components documentation](importing.md) completely covers using the `{% polymer import %}` tag.
