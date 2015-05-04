@@ -1,4 +1,4 @@
-# Importing
+# Importing Components
 Elements are typically imported using the `<link rel="import" href="...">` tag, but
 you can also use the `{% polymer import %}` tag. The Twig tag generates `<link>` tags,
 but is more beneficial than using a `<link>` tag directory. This document covers
