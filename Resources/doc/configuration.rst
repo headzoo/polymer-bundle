@@ -4,7 +4,7 @@ Configuration
 This document covers the Polyphonic configuration. These settings should
 be added to your ``/app/config/config.yml`` file.
 
-.. code:: yml
+.. code:: yaml
 
     polymer:
         debug:         true
@@ -83,9 +83,10 @@ Will generate the these import statements whenever you use the
         ...
     {% endpolymer %}
 
-    *Note: You do not add "polymer/polymer.html" to this setting. It's
+.. note::
+    Note: You do not add "polymer/polymer.html" to this setting. It's
     automatically imported every time you write a {% polymer element %}
-    tag.*
+    tag.
 
 See the `Importing Components <importing.rst>`__ documentation for more
 information.
@@ -100,9 +101,10 @@ different value. For instance if you set this setting to "poly" you
 would then use the tags ``{% poly element %}`` and
 ``{% poly import %}``.
 
-    *Important Note: This is an advanced setting that should not be
-    changed unless you absolutely need to. Setting it to a different
-    value may break other bundles that reply on the Polyphonic bundle.*
+.. important::
+	This is an advanced setting that should not be
+	changed unless you absolutely need to. Setting it to a different
+	value may break other bundles that reply on the Polyphonic bundle.
 
 twig.templates.element
 ----------------------
@@ -128,9 +130,10 @@ directory where custom elements are saved. When using the setting
 "elements" the bundle will look for your custom elements in the
 ``Resources/public/elements`` directory.
 
-    *Important Note: This is an advanced setting that should not be
-    changed unless you absolutely need to. Setting it to a different
-    value may break other bundles that reply on the Polyphonic bundle.*
+.. important::
+	This is an advanced setting that should not be
+	changed unless you absolutely need to. Setting it to a different
+	value may break other bundles that reply on the Polyphonic bundle.
 
 paths.components
 ----------------
@@ -142,6 +145,7 @@ Polymer's core components are installed. When using the setting
 "bower\_components" the bundle will look for core components in the
 ``/web/bower_components`` directory.
 
-    *Important Note: This is an advanced setting that should not be
-    changed unless you absolutely need to. Setting it to a different
-    value may break other bundles that reply on the Polyphonic bundle.*
+.. important::
+	This is an advanced setting that should not be
+	changed unless you absolutely need to. Setting it to a different
+	value may break other bundles that reply on the Polyphonic bundle.
