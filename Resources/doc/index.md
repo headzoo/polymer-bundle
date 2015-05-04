@@ -12,15 +12,6 @@ Symfony framework bundle and Twig extension for developing and deploying Polymer
 The purpose of this bundle is making it easier to use and build Polymer web components within a Symfony project.
 Polyphonic handles the problems that come up when trying to build and use web components within Twig templates.
 
-
-* [Quick Start](#quickstart)
-* [Installing](installing.md)
-* [Configuration](configuration.md)
-* [Importing](importing.md)
-* [Creating Custom Elements](custom.md)
-* [Deploying Your App](deploy.md)
-
-
 ### Quick Start
 A simple example of using the `{% polymer element %}` Twig tag to create a custom `<hello-world><hello-world>` element.
 This element displays "Hello, World!" by default, but the message can be changed by setting the `name` attribute.

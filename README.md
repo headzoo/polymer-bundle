@@ -45,24 +45,16 @@ Using the element in your views:
 <hello-world name="Pascal"></hello-world>
 ```
 
-Note, the import statement can also be written like this:
-
-```html
-{% polymer import "@AcmeBundle:hello-world.html.twig" %}
-```
-
-Polyphonic assumes a file named `hello-world.html.twig` can be found in a directory of the same name, e.g. `hello-world`.
-
 ### Requirements
 PHP 5.5.*  
 Symfony 2.6.*
 
 ### Installing
-Add `headzoo/polyphonic-symfony` to your composer.json requirements.
+Add `headzoo/polymer-bundle` to your composer.json requirements.
 
 ```javascript
 "require": {
-    "headzoo/polyphonic-symfony": "0.0.2"
+    "headzoo/polymer-bundle": "0.0.3"
 }
 ```
 

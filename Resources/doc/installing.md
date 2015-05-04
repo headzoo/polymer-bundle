@@ -7,11 +7,11 @@ Composer
 Symfony 2.6.*
 
 ### Installing
-Add `headzoo/polyphonic-symfony` to your composer.json requirements.
+Add `headzoo/polymer-bundle` to your composer.json requirements.
 
 ```javascript
 "require": {
-    "headzoo/polyphonic-symfony": "0.0.2"
+    "headzoo/polymer-bundle": "0.0.3"
 }
 ```
 
