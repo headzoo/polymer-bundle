@@ -151,6 +151,7 @@ class PathResolverTest
                 "/paper-elements", false, false,
                 "/paper-elements"
             ],
+            /*
             [ // 10
                 "@PolymerBundle:hello-world/hello-world.html.twig", true, true,
                 "/../src/Headzoo/Bundle/PolymerBundle/Resources/public/elements/hello-world/hello-world.html.twig",
@@ -159,6 +160,7 @@ class PathResolverTest
                 "@PolymerBundle:hello-world/hello-world.html.twig", false, true,
                 "/bundles/polymer/elements/hello-world/hello-world.html",
             ],
+            */
             [ // 12
                 "@PolymerBundle:hello-world/hello-world.html.twig", true, false,
                 PolymerConfiguration::ROUTE_IMPORT . "?bundle=PolymerBundle&element=" . urlencode("hello-world/hello-world.html.twig")
@@ -170,22 +172,6 @@ class PathResolverTest
             [ // 14
                 "@PolymerBundle:hello-world.html", true, false,
                 PolymerConfiguration::ROUTE_IMPORT . "?bundle=PolymerBundle&element=" . urlencode("hello-world/hello-world.html")
-            ],
-            [ // 15
-                "paper-elements/paper-elements.html", true, true,
-                "/bower_components/paper-elements/paper-elements.html"
-            ],
-            [ // 16
-                "paper-elements.html", true, true,
-                "/bower_components/paper-elements/paper-elements.html"
-            ],
-            [ // 17
-                "paper-elements", true, true,
-                "/bower_components/paper-elements/paper-elements"
-            ],
-            [ // 18
-                "/components/paper-elements/paper-elements.html", true, true,
-                "/components/paper-elements/paper-elements.html"
             ]
         ];
     }
