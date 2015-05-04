@@ -4,7 +4,7 @@ Configuration
 This document covers the Polyphonic configuration. These settings should
 be added to your ``/app/config/config.yml`` file.
 
-.. code:: yaml
+.. sourcecode:: yaml
 
     polymer:
         debug:         true
@@ -73,7 +73,7 @@ setting:
 Will generate the these import statements whenever you use the
 ``{% polymer element %}`` tag:
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "polymer/polymer.html" %}
     {% polymer import "paper-elements/paper-elements.html" %}

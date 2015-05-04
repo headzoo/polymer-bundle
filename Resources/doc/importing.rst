@@ -10,14 +10,14 @@ document covers those benefits.
 Syntax:
 -------
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import <asset name> [<asset name>...] %}
 
 Example 1:
 ^^^^^^^^^^
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world/hello-world.html.twig" %}
     {% polymer import "paper-elements/paper-elements.html" %}
@@ -27,7 +27,7 @@ The asset directory name may be omitted when the file name (minus the
 also be written like this. This is the preferred format, and the format
 used through most of the documentation.
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world.html.twig" %}
     {% polymer import "paper-elements.html" %}
@@ -38,7 +38,7 @@ Example 2:
 You can import multiple assets using a single ``{% polymer import %}``
 tag.
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world.html.twig" "@PolymerBundle:menu-toolbar.html.twig" %}
     {% polymer import "core-ajax.html" "core-animation.html" %}
@@ -61,14 +61,14 @@ location may be changed using the
 Example:
 ^^^^^^^^
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "paper-elements.html" %}
     {% polymer import "core-ajax.html" "core-animation.html" %}
 
 Generates these ``<link>`` tags:
 
-.. code:: html
+.. sourcecode:: html
 
     <link rel="import" href="/bower_components/paper-elements/paper-elements.html">
     <link rel="import" href="/bower_components/core-ajax/core-ajax.html">
@@ -93,14 +93,14 @@ found in the directory
 Example:
 ^^^^^^^^
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world/hello-world.html.twig" %}
 
 Just like other import statements the directory name may be omitted when
 it matches the file name.
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world.html.twig" %}
 
@@ -114,13 +114,13 @@ is used to output the element HTML.
 
 For example this import tag:
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world.html.twig" %}
 
 Will generate this ``<link>`` tag:
 
-.. code:: html
+.. sourcecode:: html
 
     <link rel="import" href="/_polymer/import?bundle=AcmeBundle&element=hello-world%2Fhello-world.html.twig">
 
@@ -131,13 +131,13 @@ app <deploy.rst>`__ for more information.
 
 For example this import tag:
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world.html.twig" %}
 
 Will generate this ``<link>`` tag:
 
-.. code:: html
+.. sourcecode:: html
 
     <link rel="import" href="/bundles/acme/elements/hello-world/hello-world.html">
 
@@ -154,14 +154,14 @@ You can do that by starting the asset name with a ``/`` character, or
 Example:
 ^^^^^^^^
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "/some-element/some-element.html" %}
     {% polymer import "http://example.com/some-element/some-element.html" %}
 
 Generates these ``<link>`` tags:
 
-.. code:: html
+.. sourcecode:: html
 
     <link rel="import" href="/some-element/some-element.html">
     <link rel="import" href="http://example.com/some-element/some-element.html">

@@ -14,7 +14,7 @@ Installing
 
 Add ``headzoo/polymer-bundle`` to your composer.json requirements.
 
-.. code:: javascript
+.. sourcecode:: json
 
     "require": {
         "headzoo/polymer-bundle": "0.0.3"
@@ -22,7 +22,7 @@ Add ``headzoo/polymer-bundle`` to your composer.json requirements.
 
 Run ``composer update`` and then add the bundle your AppKernel.php.
 
-.. code:: php
+.. sourcecode:: php
 
     class AppKernel extends Kernel
     {

@@ -34,7 +34,7 @@ statement is added automatically. The template is saved in the bundle
 directory at
 ``Resources/public/elements/hello-world/hello-world.html.twig``.
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer element "hello-world" attributes="name" %}
         <template>
@@ -49,7 +49,7 @@ directory at
 
 Using the element in your views:
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world/hello-world.html.twig" %}
 
@@ -61,7 +61,7 @@ Using the element in your views:
 
 Note, the import statement can also be written like this:
 
-.. code:: html
+.. sourcecode:: twig
 
     {% polymer import "@AcmeBundle:hello-world.html.twig" %}
 
