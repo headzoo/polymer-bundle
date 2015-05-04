@@ -8,7 +8,7 @@ interface PathsConfigurationInterface
     extends ArrayConfigurationInterface
 {
     const DEFAULT_ELEMENTS = "elements";
-    const DEFAULT_COMPONENTS = "/bower_components";
+    const DEFAULT_COMPONENTS = "bower_components";
     const KEY_ELEMENTS = "elements";
     const KEY_COMPONENTS = "components";
 
