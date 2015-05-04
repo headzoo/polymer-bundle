@@ -1,6 +1,6 @@
 {
-  "name": "headzoo/polyphonic-symfony",
-  "description": "Symfony framework bundle and Twig extension for using and developing Polymer web components.",
+  "name": "headzoo/polymer-bundle",
+  "description": "Symfony framework bundle and Twig extension for developing and deploying Polymer web components.",
   "keywords": [
     "symfony",
     "twig",
@@ -8,7 +8,7 @@
     "web components",
     "javascript"
   ],
-  "homepage": "https://github.com/headzoo/polyphonic-symfony",
+  "homepage": "https://github.com/headzoo/polymer-bundle",
   "type": "symfony-bundle",
   "license": "MIT",
   "authors": [
