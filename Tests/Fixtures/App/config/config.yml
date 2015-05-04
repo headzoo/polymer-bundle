@@ -38,4 +38,3 @@ assetic:
 
 # Polymer configuration.
 polymer:
-nts: bower_components
