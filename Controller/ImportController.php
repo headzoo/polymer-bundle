@@ -13,21 +13,24 @@ class ImportController
 {
     public function elementAction(Request $request)
     {
+        if (!$this->get("kernel")->isDebug()) {
+            throw $this->createNotFoundException();
+        }
+        
+        $bundle  = $request->query->get("bundle");
         $element = $request->query->get("element");
-        if (!$element) {
-            return new Response('Element Not Found', 404);
+        if (!$bundle || !$element) {
+            throw $this->createNotFoundException();
         }
         
         try {
-            $parts = explode(":", $element, 2);
             $configuration = $this->get("polymer.configuration");
             $elements_path = $configuration->getPaths()->getElements();
-            $resource_path = "{$parts[0]}/Resources/public/{$elements_path}/{$parts[1]}";
-            $template_path = $this->get("kernel")->locateResource($resource_path);
-            
-            return $this->render($template_path);
+            $resource_path = "@{$bundle}/Resources/public/{$elements_path}/{$element}";
+
+            return $this->render($this->get("kernel")->locateResource($resource_path));
         } catch (\Exception $e) {
-            return new Response('Element Not Found', 404);
+            throw $this->createNotFoundException();
         }
     }
 }
