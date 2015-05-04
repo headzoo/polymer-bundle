@@ -88,3 +88,5 @@ class AppKernel extends Kernel
     }
 }
 ```
+
+Next: [Read the full documentation](Resources/doc/index.md)
