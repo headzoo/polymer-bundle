@@ -42,7 +42,7 @@ You can import multiple assets using a single `{% polymer import %}` tag.
 ### Core Components
 Core Polymer components -- such as those installed using Bower -- are expected to
 be saved in the directory `www/bower_components/`. This location may be changed
-using the [polymer.paths.components](doc/configuration.md#pathscomponents) setting.
+using the [polymer.paths.components](configuration.md#pathscomponents) setting.
 
 ##### Example:
 ```html
@@ -61,8 +61,8 @@ Generates these `<link>` tags:
 ### Custom Components
 You can write custom elements for your bundle and import them using the
 `@BundleName:path-to-element.html` syntax. The location may be changed using the
-[polymer.paths.elements](doc/configuration.md#pathselements) setting. See the
-documentation on [custom elements](doc/custom.md) for more information on creating your own
+[polymer.paths.elements](configuration.md#pathselements) setting. See the
+documentation on [custom elements](custom.md) for more information on creating your own
 elements.
 
 The following examples use the fictitious bundle `AcmeBundle`, which is saved with
@@ -85,7 +85,7 @@ the file name.
 ##### Resolving Paths
 
 *How* the path to your custom elements gets resolved to a URL depends on the
-[polymer.debug](doc/configuration.md#debug) setting. When debugging is turned on
+[polymer.debug](configuration.md#debug) setting. When debugging is turned on
 the `Headzoo\Bundle\PolymerBundle\Controller` controller is used to output the
 element HTML.
 
@@ -103,7 +103,7 @@ Will generate this `<link>` tag:
 
 When debugging is off you must install your custom elements using the
 [assets:install](http://symfony.com/blog/new-in-symfony-2-6-smarter-assets-install-command)
-command after making changes. See the documentation on [deploying your app](doc/deploy.md)
+command after making changes. See the documentation on [deploying your app](deploy.md)
 for more information.
 
 For example this import tag:
