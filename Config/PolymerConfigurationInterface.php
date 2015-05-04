@@ -14,7 +14,7 @@ interface PolymerConfigurationInterface
     const KEY_DEBUG         = "debug";
     
     const DEFAULT_AUTO_VERBATIM = true;
-    const DEFAULT_DEBUG         = false;
+    const DEFAULT_DEBUG         = true;
     
     const ROUTE_IMPORT = "/_polymer/import";
 
