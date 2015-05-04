@@ -53,7 +53,8 @@ tag.
 Example 3:
 ^^^^^^^^^^
 
-You can pass variables and arrays to the ``{% polymer import %}`` tag.
+You can pass variables and arrays to the ``{% polymer import %}`` tag, which gives
+you the option to set your assets inside a controller.
 
 .. sourcecode:: twig
 
