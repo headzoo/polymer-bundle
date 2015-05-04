@@ -82,3 +82,60 @@ the file name.
 {% polymer import "@AcmeBundle:hello-world.html.twig" %}
 ```
 
+##### Resolving Paths
+
+*How* the path to your custom elements gets resolved to a URL depends on the
+[polymer.debug](doc/configuration.md#debug) setting. When debugging is turned on
+the `Headzoo\Bundle\PolymerBundle\Controller` controller is used to output the
+element HTML.
+
+For example this import tag:
+
+```html
+{% polymer import "@AcmeBundle:hello-world.html.twig" %}
+```
+
+Will generate this `<link>` tag:
+
+```html
+<link rel="import" href="/_polymer/import?bundle=AcmeBundle&element=hello-world%2Fhello-world.html.twig">
+```
+
+When debugging is off you must install your custom elements using the
+[assets:install](http://symfony.com/blog/new-in-symfony-2-6-smarter-assets-install-command)
+command after making changes. See the documentation on [deploying your app](doc/deploy.md)
+for more information.
+
+For example this import tag:
+
+```html
+{% polymer import "@AcmeBundle:hello-world.html.twig" %}
+```
+
+Will generate this `<link>` tag:
+
+```html
+<link rel="import" href="/bundles/acme/elements/hello-world/hello-world.html">
+```
+
+_Note: The ".html.twig" extension is changed to ".html" in the link href attribute._
+
+
+### Other Elements
+Sometimes you may need to import an element a full URL or relative path. You can do
+that by starting the asset name with a `/` character, or `http://`, or `https://`.
+
+##### Example:
+```html
+{% polymer import "/some-element/some-element.html" %}
+{% polymer import "http://example.com/some-element/some-element.html" %}
+```
+
+Generates these `<link>` tags:
+
+```html
+<link rel="import" href="/some-element/some-element.html">
+<link rel="import" href="http://example.com/some-element/some-element.html">
+```
+
+Note that Polyphonic does not modify the asset name in any way.

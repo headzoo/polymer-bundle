@@ -1,9 +1,9 @@
 # Configuration
 
-
+### debug
 
 
 ### paths.elements
 
-// pathscomponents
+
 ### paths.components
