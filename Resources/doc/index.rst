@@ -9,7 +9,7 @@ web components.
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 	:target: https://raw.githubusercontent.com/headzoo/polymer-bundle/master/LICENSE.md
 
-.. figure:: images/logo.png
+.. figure:: images/logos-wide.png
    :alt: Symfony, Polymer, Twig
 
 .. important::
