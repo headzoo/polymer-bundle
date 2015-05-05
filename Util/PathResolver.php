@@ -15,7 +15,7 @@ class PathResolver
     implements PolymerConfigurationAwareInterface
 {
     use PolymerConfigurationAwareTrait;
-    
+
     /**
      * @var KernelInterface
      */
@@ -23,7 +23,7 @@ class PathResolver
 
     /**
      * Constructor
-     * 
+     *
      * @param PolymerConfigurationInterface $configuration
      * @param KernelInterface               $kernel
      */
@@ -45,23 +45,23 @@ class PathResolver
     public function findCommonPath(array $directories)
     {
         $arr = [];
-        foreach($directories as $i => $path) {
+        foreach ($directories as $i => $path) {
             $directories[$i] = explode("/", $path);
             unset($directories[$i][0]);
             $arr[$i] = count($directories[$i]);
         }
 
         $min = min($arr);
-        for($i = 0; $i < count($directories); $i++) {
-            while(count($directories[$i]) > $min) {
+        for ($i = 0; $i < count($directories); $i++) {
+            while (count($directories[$i]) > $min) {
                 array_pop($directories[$i]);
             }
 
-            $directories[$i] = "/" . implode("/" , $directories[$i]);
+            $directories[$i] = "/" . implode("/", $directories[$i]);
         }
 
         $directories = array_unique($directories);
-        while(count($directories) !== 1) {
+        while (count($directories) !== 1) {
             $directories = array_map("dirname", $directories);
             $directories = array_unique($directories);
         }
@@ -69,7 +69,7 @@ class PathResolver
 
         return current($directories);
     }
-    
+
     /**
      * Gets the prefix of the asset with the given bundle
      *
@@ -92,28 +92,28 @@ class PathResolver
      * Get path
      *
      * @param string $bundle_name The name of the bundle
-     * @param string $file_name   The name of the file
+     * @param string $asset       The name of the file
      *
      * @return string
      */
-    public function getBundleWebPath($bundle_name, $file_name)
+    public function getBundleWebPath($bundle_name, $asset)
     {
-        $prefix = $this->getBundleWebPrefix($bundle_name);
+        $prefix        = $this->getBundleWebPrefix($bundle_name);
         $elements_path = $this->configuration->getPaths()->getElements();
-        
-        return sprintf('%s/%s/%s', $prefix, $elements_path, $file_name);
+
+        return sprintf('%s/%s/%s', $prefix, $elements_path, $asset);
     }
 
     /**
      * Get relative path
      *
      * @param string $bundle_name The name of the bundle
-     * @param string $file_name   The name of the file
+     * @param string $asset       The name of the file
      *
      * @return string
      * @throws RuntimeException
      */
-    public function getBundleRelativeWebPath($bundle_name, $file_name)
+    public function getBundleRelativeWebPath($bundle_name, $asset)
     {
         $elements_path = $this->configuration->getPaths()->getElements();
         $root_path     = $this->kernel->getRootDir();
@@ -124,10 +124,10 @@ class PathResolver
                 'Could not determine path to the src/ directory.'
             );
         }
-        
+
         $bundle_path = ltrim(substr($bundle_path, strlen($common_path)), '/');
-        
-        return "/../{$bundle_path}/Resources/public/{$elements_path}/{$file_name}";
+
+        return "/../{$bundle_path}/Resources/public/{$elements_path}/{$asset}";
     }
 
     /**
@@ -148,9 +148,9 @@ class PathResolver
 
     /**
      * Returns the import url for a custom element
-     * 
-     * @param string $bundle_name  The name of the bundle
-     * @param string $asset        The name of the element file
+     *
+     * @param string $bundle_name The name of the bundle
+     * @param string $asset       The name of the element file
      *
      * @return string
      * @throws RuntimeException
@@ -175,36 +175,36 @@ class PathResolver
             }
             $url = $this->getBundleWebPath($bundle_name, $asset);
         }
-        
+
         return $url;
     }
 
     /**
      * Returns the import url for a component
-     * 
-     * @param string $file_name The name of the component file
+     *
+     * @param string $asset The name of the component file
      *
      * @return string
      */
-    protected function getComponentImportUrl($file_name)
+    protected function getComponentImportUrl($asset)
     {
-        if ($file_name[0] === "/") {
-            $url = $file_name;
+        if ($asset[0] === "/" || strpos($asset, "http") === 0) {
+            $url = $asset;
         } else {
-            $dirname = pathinfo($file_name, PATHINFO_DIRNAME);
+            $dirname = pathinfo($asset, PATHINFO_DIRNAME);
             if ($dirname === ".") {
-                list($path) = explode(".", $file_name, 2);
-                $file_name = "{$path}/{$file_name}";
+                list($path) = explode(".", $asset, 2);
+                $asset = "{$path}/{$asset}";
             }
 
             $root = $this->configuration->getPaths()->getComponents();
             $url  = sprintf(
                 "/%s/%s",
                 $root,
-                $file_name
+                $asset
             );
         }
-        
+
         return $url;
     }
 }
