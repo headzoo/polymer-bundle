@@ -9,7 +9,7 @@ be added to your */app/config/config.yml* file.
 .. sourcecode:: yaml
 
     polymer:
-        debug:         true
+        debug:         %kernel.debug%
         auto_verbatim: true
         auto_imports:
             - "core-animation.html"
