@@ -12,7 +12,7 @@ Requirements
 Installing
 ----------
 
-Add ``headzoo/polymer-bundle`` to your composer.json requirements.
+Add *headzoo/polymer-bundle* to your composer.json requirements.
 
 .. sourcecode:: json
 
@@ -39,7 +39,7 @@ Run ``composer update`` and then add the bundle your AppKernel.php.
         }
     }
 
-Add the following route to your ``app/config/routing_dev.yml`` file.
+Add the following route to your *app/config/routing_dev.yml* file.
 
 .. sourcecode:: yaml
 

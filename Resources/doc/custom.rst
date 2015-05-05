@@ -1,6 +1,8 @@
 Creating Elements
 =================
 
+.. highlight:: twig
+
 This document covers creating your custom components using Polymer and
 Twig. The Polyphonic Polymer Bundle primarily acts as a compatibility
 layer between Polymer and the Twig template engine, and the goal of this
@@ -12,7 +14,7 @@ in great detail.
 Before you start make sure you have installed Polymer. `Installing
 Polymer <https://www.polymer-project.org/0.5/docs/start/getting-the-code.html>`__
 This document assumes you have used `Bower <http://bower.io/>`__ to
-install Polymer to the ``web/bower_components`` directory. By default
+install Polymer to the *web/bower_components* directory. By default
 Polyphonic is configured to look for components in that directory.
 
 Hello World
@@ -57,10 +59,10 @@ as Symfony/Twig developers we run into a problem with this line of code:
     <p>Hello, {{name}}!</p>
 
 Both Polymer and Twig use the ``{{double mustache}}`` syntax for
-variables. Symfony/Twig would throw a ``Twig_Error_Runtime`` exception
+variables. Symfony/Twig would throw a *Twig_Error_Runtime* exception
 if you tried to use this code in your templates.
 
-::
+.. note::
 
     Variable "name" does not exist in AcmeBundle:Default:index.html.twig at line 7
     500 Internal Server Error - Twig_Error_Runtime
@@ -77,9 +79,9 @@ The Polymer Tag
 
 Start by creating a file for your component inside your bundle
 directory. Polyphonic expects your component templates to be saved in
-the bundle's ``Resources/public/elements`` directory along with your
+the bundle's *Resources/public/elements* directory along with your
 bundles other assets. Create the file
-``AcmeBundle/Resources/public/elements/hello-world/hello-world.html``,
+*AcmeBundle/Resources/public/elements/hello-world/hello-world.html*,
 and add the following code.
 
 .. sourcecode:: twig
@@ -98,7 +100,7 @@ and add the following code.
 Lets look at the differences between creating a component using plain
 HTML5/JS and Polyphonic.
 
-With the Polyphonic you do not explicity import polymer.html with a
+With the Polyphonic you do not explicitly import polymer.html with a
 ``<link>`` tag. It's done for you automatically.
 
 .. sourcecode:: html
@@ -160,7 +162,7 @@ Polyphonic will automatically resolve the component URL when using the
 ``{% polymer import %}`` tag. The ``{% polymer import %}`` tag also
 provides a shortcut when the base file name of your ``.html`` file is
 the same as the directory where it's save. The above statement could be
-shortended to this:
+shortened to this:
 
 .. sourcecode:: twig
 

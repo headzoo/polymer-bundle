@@ -1,6 +1,8 @@
 Importing Components
 ====================
 
+.. highlight:: twig
+
 Elements are typically imported using the
 ``<link rel="import" href="...">`` tag, but you can also use the
 ``{% polymer import %}`` tag. The Twig tag generates ``<link>`` tags,
@@ -23,7 +25,7 @@ Example 1:
     {% polymer import "paper-elements/paper-elements.html" %}
 
 The asset directory name may be omitted when the file name (minus the
-``.html``) and directory name are the same. The above statement could
+*.html*) and directory name are the same. The above statement could
 also be written like this. This is the preferred format, and the format
 used through most of the documentation.
 
@@ -71,7 +73,7 @@ Core Components
 ---------------
 
 Core Polymer components -- such as those installed using Bower -- are
-expected to be saved in the directory ``www/bower_components/``. This
+expected to be saved in the directory *www/bower_components*. This
 location may be changed using the
 `polymer.paths.components <configuration.rst#pathscomponents>`__ setting.
 
@@ -95,17 +97,17 @@ Custom Components
 -----------------
 
 You can write custom elements for your bundle and import them using the
-``@BundleName:path-to-element.html`` syntax. The location may be changed
+*@BundleName:path-to-element.html* syntax. The location may be changed
 using the `polymer.paths.elements <configuration.rst#pathselements>`__
 setting. See the documentation on `custom elements <custom.rst>`__ for
 more information on creating your own elements.
 
-The following examples use the fictitious bundle ``AcmeBundle``, which
-is saved with the other bundles in the Symfony ``src/`` directory. For
-example ``src/Acme/Bundle/AcmeBundle``. The asset name
-``@AcmeBundle:hello-world/hello-world.html.twig`` is expected to be
+The following examples use the fictitious bundle *AcmeBundle*, which
+is saved with the other bundles in the Symfony *src/* directory. For
+example *src/Acme/Bundle/AcmeBundle*. The asset name
+*@AcmeBundle:hello-world/hello-world.html.twig* is expected to be
 found in the directory
-``AcmeBundle/Resources/public/elements/hello-world/hello-world.html``.
+*AcmeBundle/Resources/public/elements/hello-world/hello-world.html*.
 
 Example:
 ^^^^^^^^
@@ -126,7 +128,7 @@ Resolving Paths
 
 *How* the path to your custom elements gets resolved to a URL depends on
 the `polymer.debug <configuration.rst#debug>`__ setting. When debugging
-is turned on the ``Headzoo\Bundle\PolymerBundle\Controller`` controller
+is turned on the *Headzoo\Bundle\PolymerBundle\Controller* controller
 is used to output the element HTML.
 
 For example this import tag:
@@ -165,8 +167,8 @@ Other Elements
 --------------
 
 Sometimes you may need to import an element a full URL or relative path.
-You can do that by starting the asset name with a ``/`` character, or
-``http://``, or ``https://``.
+You can do that by starting the asset name with a */* character, or
+*http://*, or *https://*.
 
 Example:
 ^^^^^^^^

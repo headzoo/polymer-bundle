@@ -1,8 +1,10 @@
 Configuration
 =============
 
+.. highlight:: twig
+
 This document covers the Polyphonic configuration. These settings should
-be added to your ``/app/config/config.yml`` file.
+be added to your */app/config/config.yml* file.
 
 .. sourcecode:: yaml
 
@@ -30,12 +32,12 @@ Turns debugging on and off. This setting dictates how the
 ``{% polymer import %}`` tag resolves custom element paths. When
 debugging is turned on the Polyphonic bundle will serve your custom
 element .html files directory from your bundle
-``Resources/public/elements`` directory. When debugging is turned off
+*Resources/public/elements* directory. When debugging is turned off
 you must `install your
 assets <http://symfony.com/blog/new-in-symfony-2-6-smarter-assets-install-command>`__
-to the ``/web`` directory. Including your custom elements. The
+to the */web* directory. Including your custom elements. The
 Polyphonic bundle will look for your custom elements in the directory
-``/web/bundles/your_bundle/elements`` directory.
+*/web/bundles/your_bundle/elements* directory.
 
 auto\_verbatim
 --------------
@@ -44,7 +46,7 @@ Default: ``true``
 
 The bundle configures Twig to ignore code between {% polymer %} tags,
 which is *usually* what you want. However, in order for the feature to
-work the bundle uses it's own ``Twig_Environment`` and ``Twig_Lexer``
+work the bundle uses it's own *Twig_Environment* and *Twig_Lexer*
 implementations, which may interfer with your application. You can set
 this setting to ``false`` if you run into problems, however when this
 feature is turned off you must have to wrap your Polymer code in Twig's
@@ -125,10 +127,10 @@ paths.elements
 
 Default: ``"elements"``
 
-Specifies the directory inside your bundle ``Resources/public``
+Specifies the directory inside your bundle *Resources/public*
 directory where custom elements are saved. When using the setting
 "elements" the bundle will look for your custom elements in the
-``Resources/public/elements`` directory.
+*Resources/public/elements* directory.
 
 .. important::
 	This is an advanced setting that should not be
@@ -140,10 +142,10 @@ paths.components
 
 Defaults: ``"bower_components"``
 
-Specifies the directory inside your project ``/web`` directory where
+Specifies the directory inside your project */web* directory where
 Polymer's core components are installed. When using the setting
 "bower\_components" the bundle will look for core components in the
-``/web/bower_components`` directory.
+*/web/bower_components* directory.
 
 .. important::
 	This is an advanced setting that should not be

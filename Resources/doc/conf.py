@@ -19,6 +19,7 @@ lexers['json'] = JsonLexer()
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.ifconfig',
+    'sphinxcontrib.inlinesyntaxhighlight'
 ]
 
 project = u'Polyphonic Polymer Bundle'

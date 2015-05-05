@@ -1,6 +1,8 @@
 Polyphonic Polymer Bundle
 =========================
 
+.. highlight:: twig
+
 Symfony bundle and Twig extension for developing and deploying Polymer
 web components.
 
@@ -32,7 +34,7 @@ Note that there's no need to add
 ``<link rel="import" href="polymer/polymer.html">`` as the import
 statement is added automatically. The template is saved in the bundle
 directory at
-``Resources/public/elements/hello-world/hello-world.html.twig``.
+*Resources/public/elements/hello-world/hello-world.html.twig*.
 
 .. sourcecode:: twig
 
@@ -59,8 +61,8 @@ Using the element in your views:
     <!-- Displays "Hello, Pascal!" -->
     <hello-world name="Pascal"></hello-world>
 
-Polyphonic assumes a file named ``hello-world.html.twig`` can be found
-in a directory of the same name, e.g. ``hello-world``.
+Polyphonic assumes a file named *hello-world.html.twig* can be found
+in a directory of the same name, e.g. *hello-world*.
 
 .. toctree::
 	:maxdepth: 2
